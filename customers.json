@@ -174,5 +174,13 @@
   "customerCity": "Windsor",
   "customerState": "NJ",
   "customerPhone": "3211001000"
+ },
+ {
+  "customerID": "23",
+  "customerName": "Tim O.",
+  "customerAddress": "101 smarty way",
+  "customerCity": "Los Angeles",
+  "customerState": "CA",
+  "customerPhone": "1002009999"
  }
 ]
