@@ -1,0 +1,27 @@
+[
+    {
+      "Movie ID": 1,
+      "Movie Name": "007",
+      "Movie Genre": "Action"
+    },  
+    {
+      "Movie ID": 2,
+      "Movie Name": "Marley and Me",
+      "Movie Genre": "Comedy"
+    },  
+    {
+      "Movie ID": 3,
+      "Movie Name": "Titanic",
+      "Movie Genre": "Romance"
+    },
+    {
+      "Movie ID": 4,
+      "Movie Name": "The Batman",
+      "Movie Genre": "Action"
+    },
+    {
+      "Movie ID": 5,
+      "Movie Name": "The Kashmir Files",
+      "Movie Genre": "History"
+    }
+]
