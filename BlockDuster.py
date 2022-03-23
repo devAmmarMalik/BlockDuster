@@ -1,3 +1,16 @@
+# Python 3
+# coding: utf-8
+
+__author__ = "Ammar S "
+__copyright__ = "Copyright 2022, The Movie Rental Project"
+__credits__ = ["Ammar Malik", "", "Gavin Huttley",
+                    "Matthew Wakefield"]
+__license__ = "GPL"
+__version__ = "1.0.1"
+__maintainer__ = "all creditors/github"
+__email__ = "dev.malik.ammar@gmail.com"
+__status__ = "Production"
+
 # Simple main menu to handle our Movie Rental store
 # It will show a static menu and will ask for an option
 # Then it will clear the screen and proceed accordingly
