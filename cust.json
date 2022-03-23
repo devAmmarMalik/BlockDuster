@@ -137,7 +137,7 @@
  },
  {
   "customerID": "18",
-  "customerName": "Nosa Okundaye",
+  "customerName": "Nosa Okanduye",
   "customerAddress": "99 Fun st",
   "customerCity": "San Jose",
   "customerState": "CA",
@@ -158,21 +158,5 @@
   "customerCity": "Dallas",
   "customerState": "TX",
   "customerPhone": "5566771000"
- },
- {
-  "customerID": "21",
-  "customerName": "Bakal G",
-  "customerAddress": "21 Professor st",
-  "customerCity": "Portland",
-  "customerState": "OR",
-  "customerPhone": "6065051111"
- },
- {
-  "customerID": "22",
-  "customerName": "Akshaya Ramakrishna",
-  "customerAddress": "7 blossom circle",
-  "customerCity": "Windsor",
-  "customerState": "NJ",
-  "customerPhone": "3211001000"
  }
 ]

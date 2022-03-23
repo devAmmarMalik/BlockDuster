@@ -14,7 +14,7 @@ def readJsonFile(filename) :
 data = readJsonFile('customers.json')
 lenCustomers = len(data['customers']['customer'])
 
-
+#for i in data
 for i in range(0,lenCustomers) :
     print(f"{i+1}. Customer ID : {data['customers']['customer'][i]['customerID']}", end = " -->")
     print(f" {data['customers']['customer'][i]['customerName']}", end = ", ")
