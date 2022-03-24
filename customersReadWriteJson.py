@@ -18,36 +18,51 @@ for i in data :
     print(f" {i['customerPhone']}\n")
     lastCustID = int(i['customerID'])  # storing last customer id in variable
 
+action = input("Enter a number for the action : add customers - 1 , edit customers - 2, delete customers - 3 : ")
 
-#initializing a dictionary to store the new customer data
-newCust = { "customerID":"", 
-            "customerName": "", 
-            "customerAddress": "", 
-            "customerCity": "", 
-            "customerState": "",
-            "customerPhone": ""
-            }
-
-
-# getting new customer details for adding new customers
-
-custName = input("Enter new customer name: ")
-custAddress = input("Enter street address: ")
-custCity = input("Enter city: ")
-custState = input("Enter State: ")
-custPhone = input("Enter phone: ")
+if action == "1" :
+    #initializing a dictionary to store the new customer data
+    newCust = { "customerID":"", 
+                "customerName": "", 
+                "customerAddress": "", 
+                "customerCity": "", 
+                "customerState": "",
+                "customerPhone": ""
+                }
 
 
-# populating the new customer dictionary with user inputs
+    # getting new customer details for adding new customers
 
-newCust['customerID'] = str(lastCustID + 1)
-newCust['customerName'] = custName
-newCust['customerAddress'] = custAddress
-newCust['customerCity'] = custCity
-newCust['customerState'] = custState
-newCust['customerPhone'] = custPhone
+    custName = input("\nEnter new customer name: ")
+    custAddress = input("Enter street address: ")
+    custCity = input("Enter city: ")
+    custState = input("Enter State: ")
+    custPhone = input("Enter phone: ")
 
 
-# calling funcion to write the new record in json file
-if jsonFileHandler.writeJsonFile(newCust, "customers.json") :
-    print("Successfully added new customer!!")
+    # populating the new customer dictionary with user inputs
+
+    newCust['customerID'] = str(lastCustID + 1)
+    newCust['customerName'] = custName
+    newCust['customerAddress'] = custAddress
+    newCust['customerCity'] = custCity
+    newCust['customerState'] = custState
+    newCust['customerPhone'] = custPhone
+
+
+    # calling funcion to write the new record in json file
+    if jsonFileHandler.writeJsonFile(newCust, "customers.json") :
+        print("Successfully added new customer!!")
+
+        
+
+
+
+elif action == "3" :
+    # delete a customer
+    delCustomer = input("\nEnter customer to be removed: ")
+
+    if jsonFileHandler.delJsonFile(delCustomer, "customers.json"):
+        print(f"\nSuccessfully deleted {delCustomer} from Custemers datafile!!\n")
+    else :
+        print("\nCustomer not found!!\n")
