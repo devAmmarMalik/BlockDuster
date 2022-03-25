@@ -1,4 +1,5 @@
 import json
+from operator import ne
 
 #function to read from json file
 
@@ -12,6 +13,37 @@ def readJsonFile(filename) :
 
 
 # function to add new data record  to jason file
+def editJsonFile(editCust, newdata, filename) :
+    # load data from json file
+    data = readJsonFile(filename)
+
+    lendata = len(data)
+    
+    for i in range(0,lendata):
+        if data[i]['customerName'] == editCust :
+            if newdata['customerAddress'] != "":
+                 data[i]['customerAddress'] = newdata['customerAddress']
+                 
+            elif newdata['customerCity'] != "" :
+                 data[i]['customerCity'] = newdata['customerCity']
+                 
+            elif newdata['customerState'] != "" :
+                data[i]['customerState'] = newdata['customerState']
+                
+            elif newdata['customerPhone'] != "" :
+                data[i]['customerPhone'] = newdata['customerPhone'] 
+                
+     
+            with open(filename, "w") as json_file :
+                print(json.dump(data, json_file, indent=1))       
+                return 0
+            
+    else :
+        return 1
+
+    
+
+
 
 def writeJsonFile(newdata, filename) :
     # load data from json file   
@@ -23,7 +55,6 @@ def writeJsonFile(newdata, filename) :
         print(json.dump(data, json_file, indent=1))  # writing data list of all records back to json file
     return True
 
-# funtion to edit a customers details in json file
 
 
 
