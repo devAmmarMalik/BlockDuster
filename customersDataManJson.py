@@ -56,7 +56,33 @@ if action == "1" :
 
         
 
+elif action == "2" :
+    #edit customer details
 
+    editCust = {"customerAddress" : "",
+                "customerCity" : "",
+                "customerState" : "",
+                "customerPhone" : ""
+                }
+    
+    editName = input("\nEnter customer name for updating: ")
+
+    editCust["customerAddress"] = input("Enter new address (press enter - no changes): ")
+    editCust["customerCity"] = input("Enter City (press enter - no changes): ")
+    editCust["customerState"] = input("Enter State (press enter - no changes): ")
+    editCust["customerPhone"] = input("Enter new phone (press enter - no changes) : ")
+
+    if not any(editCust.values()):
+        print(f"\nNo changes given for {editName}!!!\n")
+        quit()
+
+    editStatus = jsonFileHandler.editJsonFile(editName, editCust, "customers.json")
+
+    if editStatus == 0 :
+        print(f"\nSuccefully updated {editName}'s details!!")
+    elif editStatus == 1 :
+        print(f"\n{editName} not found in datafile!!\n")
+    
 
 elif action == "3" :
     # delete a customer
@@ -65,4 +91,4 @@ elif action == "3" :
     if jsonFileHandler.delJsonFile(delCustomer, "customers.json"):
         print(f"\nSuccessfully deleted {delCustomer} from Custemers datafile!!\n")
     else :
-        print("\nCustomer not found!!\n")
+        print(f"\n{delCustomer} not found!!\n")
