@@ -65,15 +65,21 @@ def MainMenu() :
 MainMenu()
 selection = 0
 while selection != "4" :
-    selection=input(BlockDusterColors.colorFormat.CBLUE + "     Make your selection.......:" + BlockDusterColors.colorFormat.ENDC)
+    selection=input(BlockDusterColors.colorFormat.CBLUE + "     Make your selection.......: " + BlockDusterColors.colorFormat.ENDC)
     if selection == '1' :
-        CustomerMainMenu.MainMenu()
+        showCustomerMenu = 0
+        while showCustomerMenu == 0 :
+            showCustomerMenu = CustomerMainMenu.MainMenu()
         MainMenu()
     elif selection == '2' :
-        MoviesMainMenu.MainMenu()
+        showMovieMenu = 0
+        while showMovieMenu == 0 :
+            showMovieMenu = MoviesMainMenu.MainMenu()
         MainMenu()
     elif selection == '3' :
-        RentalMainMenu()
+        showRentalMenu = 0
+        while showRentalMenu == 0 :
+            showRentalMenu = RentalMainMenu()
         MainMenu()
     elif selection == '4' :
         os.system('clear')

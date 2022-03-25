@@ -21,13 +21,30 @@ oneRecord = {
     "ReturnDate" : ""
 }
 
-filename = "Rental.json"
+filename = os.getcwd() + "/Rental.json"
 fileData = []
+
+def getCustomer():
+    import CustomerIDX
+    recNumber = -1
+    customerID = 0
+    objCustomer = CustomerIDX.Customer("customers.json")
+    cCustomerName = input("     Customer name to rent : ")
+    showCustomer, recNumber, customerID = objCustomer.searchCustomer(cCustomerName, "customers.json")
+    if len(showCustomer) > 0 :
+        print("Customer Name : ", showCustomer["customerName"])
+        print("      Address : ", showCustomer["customerAddress"])
+        print("         City : ", showCustomer["customerCity"])
+        print("        state : ", showCustomer["customerState"])
+        print(" Phone Number : ", showCustomer["customerPhone"])
+    else:
+        print("*** Customer not found ***")
+
+    return (customerID)
 
 def RentalMainMenu() :
     os.system('clear')  # Clear the terminal before starting the program so everything is clear
-    print('''                                                                              
-                     _
+    print('''        _
                     ( \
          __         _)_\_
         ' \;---.-._S_____2_
@@ -41,7 +58,7 @@ def RentalMainMenu() :
       |    |'-|    _|--'\_(_/       '.'
       |    |   \_  -\
        \   |     \ /`)
-        '._/      (_/  
+        '._/      (_/
     ------------------------ MOVIES RENTAL ------------------------
     ''')
 
@@ -62,13 +79,13 @@ def RentalMainMenu() :
         if selection == '1' :
             # So fileData has a collection of the entire file. Get the input from the user and save it to the 
             # dictionary variable above
-            oneRecord["VideoID"] = input("  Video ID to add : ")
-            oneRecord["CustomerID"] = input("   Customer ID to add : ")
+            oneRecord["VideoID"] = 1
+            oneRecord["CustomerID"] = getCustomer()
             oneRecord["IssueDate"] = today.strftime('%m/%d/%Y')
             RentalData.AddARental(oneRecord, fileData, filename)
             input("Record saved successfully")
             os.system('clear')
-            RentalMainMenu()
+            return 0
         elif selection == '2' :
             print("Edit a customer")
         elif selection == '3' :
