@@ -17,9 +17,13 @@ def editJsonFile(editCust, newdata, filename) :
     # load data from json file
     data = readJsonFile(filename)
 
+    # gets the number of records
     lendata = len(data)
     
+    #parsing the records in data 
+
     for i in range(0,lendata):
+        #  assigning new values to data if given for customerName, address, city, state
         if data[i]['customerName'] == editCust :
             if newdata['customerAddress'] != "":
                  data[i]['customerAddress'] = newdata['customerAddress']
@@ -33,7 +37,7 @@ def editJsonFile(editCust, newdata, filename) :
             elif newdata['customerPhone'] != "" :
                 data[i]['customerPhone'] = newdata['customerPhone'] 
                 
-     
+            # opening json file and writing edited data back  
             with open(filename, "w") as json_file :
                 print(json.dump(data, json_file, indent=1))       
                 return 0

@@ -73,7 +73,7 @@ elif action == "2" :
     editCust["customerPhone"] = input("Enter new phone (press enter - no changes) : ")
 
     if not any(editCust.values()):
-        print("No changes given")
+        print(f"\nNo changes given for {editName}!!!\n")
         quit()
 
     editStatus = jsonFileHandler.editJsonFile(editName, editCust, "customers.json")
@@ -82,9 +82,7 @@ elif action == "2" :
         print(f"\nSuccefully updated {editName}'s details!!")
     elif editStatus == 1 :
         print(f"\n{editName} not found in datafile!!\n")
-    elif editStatus == 2 :
-        print(f"\nNo changes given for {editName}")
-
+    
 
 elif action == "3" :
     # delete a customer
