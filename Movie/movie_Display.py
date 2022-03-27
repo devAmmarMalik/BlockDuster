@@ -1,4 +1,3 @@
-
 import json 
 
 # from tkinter.messagebox import YES, YESNOCANCEL
@@ -47,7 +46,10 @@ for myRec in (movieJsonFile):
     print("Movie Title:",myRec["Movie Title"])
 
 lenOfAllRecs = len(movieJsonFile)
-print(movieJsonFile[5-1]["Movie_ID"])
+#print(movieJsonFile[5-1]["Movie_ID"])
+for i in lenOfAllRecs
+    print(["Movie_ID"])
+
 
 nextRecord = int(movieJsonFile[lenOfAllRecs-1]["Movie_ID"]) + 1
 print(nextRecord)
