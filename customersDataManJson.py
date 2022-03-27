@@ -89,6 +89,6 @@ elif action == "3" :
     delCustomer = input("\nEnter customer to be removed: ")
 
     if jsonFileHandler.delJsonFile(delCustomer, "customers.json"):
-        print(f"\nSuccessfully deleted {delCustomer} from Custemers datafile!!\n")
+        print(f"\nSuccessfully deleted {delCustomer} from Customers datafile!!\n")
     else :
         print(f"\n{delCustomer} not found!!\n")
