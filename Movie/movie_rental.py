@@ -26,21 +26,19 @@ def write_json(new_data, fileName = 'data.json'):
     except IOError:
             print("Error")
 
-  
+
+    ans = input('Add Record to Movie List?' '(yes/no) ')
+    if ans == "yes":
+        movieID = input('New Movie name?')
+        movieTitle = input('New Movie name?')
+        movieActors = input('New Movie name?')
 
 
-
-
-ans =input('Add Record to Movie List?' '(yes/no) ')
-if ans == "yes":
-    movieID = input('New Movie name?')
-    movieTitle = input('New Movie name?')
-    movieActors = input('New Movie name?')
-
-
-    newMovie = {    "Movie ID": "movieID",
-                    "Movie Title": "movieTitle", 
-                    "Movie Actors":"movieActors" 
-                }
-write_json(newMovie)
+        newMovie = {    "Movie ID": "movieID",
+                        "Movie Title": "movieTitle", 
+                        "Movie Actors":"movieActors" 
+                    }
+    elif ans != "no":
+            print("Please try again")
+    write_json(newMovie)
    
