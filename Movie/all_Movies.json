@@ -1,0 +1,32 @@
+[
+    {
+        "Movie_ID": "1",
+        "Movie_Title": "Sholey",
+        "Actor_Name": "Amithav Bachan"
+
+    },
+    {
+        "Movie_ID": "2",
+        "Movie_Title": "Tootsie",
+        "Actor_Name": "Hoffman"
+
+    },
+    {
+        "Movie_ID": "3",
+        "Movie_Title": "The Graduate",
+        "Actor_Name": "Dustin Hoffman"
+
+    },
+    {
+        "Movie_ID": "4",
+        "Movie_Title": "The Wizard of Oz",
+        "Actor Name": "Judy Garland"
+
+    },
+    {
+        "Movie_ID": "5",
+        "Movie_Title": "Amadeus",
+        "Actor_Name": "Milos Forman"
+
+    }
+]
