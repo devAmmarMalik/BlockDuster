@@ -1,5 +1,4 @@
 import json
-from operator import ne
 
 #function to read from json file
 
@@ -46,12 +45,13 @@ def editJsonFile(editCust, newdata, filename) :
         return 1
 
     
-
-
-
 def writeJsonFile(newdata, filename) :
     # load data from json file   
     data = readJsonFile(filename)
+    # assigning customer id to new customer by adding 1 to the customer id of last record
+    newdata['customerID'] = str(int(data[-1]['customerID']) + 1)
+
+    print(newdata)
     
     # open json file in write mode         
     with open(filename, "w") as json_file:
