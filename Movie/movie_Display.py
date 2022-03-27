@@ -31,8 +31,8 @@ def readMovieRecord():
 
 def writeJsonFile(newdata, filename) :
     # load data from json file   
-    #data = readMovieRecord()
-    #Data = readMovieRecord()
+    # data = readMovieRecord()
+    # Data = readMovieRecord()
     # open json file in write mode        
     with open(filename, "w") as json_file:
         movieJsonFile.append(newdata)  # appending data list read from json file with new record
