@@ -19,7 +19,21 @@ def readMovieRecord():
     return data
      
 
-def writeJsonFile(newdata, filename) :      
+# def write_json(new_data, fileName):
+
+#     try:
+#         with open (fileName) as f: #opening file
+#             file_data = json.load(f)#loading the file in python object
+#             file_data.append(","+new_data)           
+#             json.dump([],file_data)
+#     except IOError:
+#             print("Error")
+
+def writeJsonFile(newdata, filename) :
+    # load data from json file   
+    # data = readMovieRecord()
+    # Data = readMovieRecord()
+    # open json file in write mode        
     with open(filename, "w") as json_file:
         movieJsonFile.append(newdata)  # appending data list read from json file with new record
         print(json.dump(movieJsonFile, json_file, indent=1))  # writing data list of all records back to json file
