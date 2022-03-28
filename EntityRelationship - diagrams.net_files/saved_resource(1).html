@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://app.diagrams.net/?embed=1&proto=json&forceMigration=undefined -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>diagrams.net</title>
+    <meta name="application-name" content="diagrams.net"><meta name="apple-mobile-web-app-title" content="diagrams.net">
+    
+    <meta name="Description" content="diagrams.net is free online diagram software for making flowcharts, process diagrams, org charts, UML, ER and network diagrams">
+    <meta name="Keywords" content="diagram, online, flow chart, flowchart maker, uml, erd">
+    <meta itemprop="name" content="diagrams.net - free flowchart maker and diagrams online">
+	<meta itemprop="description" content="diagrams.net is a free online diagramming application  and flowchart maker . You can use it to create UML, entity relationship,
+		org charts, BPMN and BPM, database schema and networks. Also possible are telecommunication network, workflow, flowcharts, maps overlays and GIS, electronic 
+		circuit and social network diagrams.">
+	<meta itemprop="image" content="https://lh4.googleusercontent.com/-cLKEldMbT_E/Tx8qXDuw6eI/AAAAAAAAAAs/Ke0pnlk8Gpg/w500-h344-k/BPMN%2Bdiagram%2Brc2f.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="msapplication-config" content="images/browserconfig.xml">
+    <meta name="mobile-web-app-capable" content="yes">
+	<meta name="theme-color" content="#d89000">
+	<script type="text/javascript" defer="true" src="./extensions.min.js"></script><script type="text/javascript" defer="true" src="./stencils.min.js"></script><script type="text/javascript" defer="true" src="./shapes-14-6-5.min.js"></script><script type="text/javascript" defer="true" src="./app.min.js"></script><script type="text/javascript">
+		/**
+		 * URL Parameters and protocol description are here:
+		 *
+		 * https://desk.draw.io/support/solutions/articles/16000042546-what-url-parameters-are-supported
+		 *
+		 * Parameters for developers:
+		 *
+		 * - dev=1: For developers only
+		 * - test=1: For developers only
+		 * - export=URL for export: For developers only
+		 * - ignoremime=1: For developers only (see DriveClient.js). Use Cmd-S to override mime.
+		 * - createindex=1: For developers only (see etc/build/README)
+		 * - filesupport=0: For developers only (see Editor.js in core)
+		 * - savesidebar=1: For developers only (see Sidebar.js)
+		 * - pages=1: For developers only (see Pages.js)
+		 * - lic=email: For developers only (see LicenseServlet.java)
+		 * --
+		 * - networkshapes=1: For testing network shapes (temporary)
+		 */
+		var urlParams = (function()
+		{
+			var result = new Object();
+			var params = window.location.search.slice(1).split('&');
+			
+			for (var i = 0; i < params.length; i++)
+			{
+				var idx = params[i].indexOf('=');
+				
+				if (idx > 0)
+				{
+					result[params[i].substring(0, idx)] = params[i].substring(idx + 1);
+				}
+			}
+			
+			return result;
+		})();
+		
+		// Forces CDN caches by passing URL parameters via URL hash
+		if (window.location.hash != null && window.location.hash.substring(0, 2) == '#P')
+		{
+			try
+			{
+				urlParams = JSON.parse(decodeURIComponent(window.location.hash.substring(2)));
+				
+				if (urlParams.hash != null)
+				{
+					window.location.hash = urlParams.hash;
+				}
+			}
+			catch (e)
+			{
+				// ignore
+			}
+		}
+		
+		// Global variable for desktop
+		var mxIsElectron = window && window.process && window.process.type;
+
+		// Redirects page if required
+		if (urlParams['dev'] != '1')
+		{
+			(function()
+			{
+				var proto = window.location.protocol;
+				
+				if (!mxIsElectron)
+				{
+					var host = window.location.host;
+		
+					// Redirects apex, drive and rt to www
+					if (host === 'draw.io' || host === 'rt.draw.io' || host === 'drive.draw.io')
+					{
+						host = 'www.draw.io';
+					}
+					
+					var href = proto + '//' + host + window.location.href.substring(
+							window.location.protocol.length +
+							window.location.host.length + 2);
+		
+					// Redirects if href changes
+					if (href != window.location.href)
+					{
+						window.location.href = href;
+					}
+				}
+			})();
+		}
+		
+		/**
+		 * Adds meta tag to the page.
+		 */
+		function mxmeta(name, content, httpEquiv)
+		{
+			try
+			{
+				var s = document.createElement('meta');
+				
+				if (name != null) 
+				{
+					s.setAttribute('name', name);
+				}
+
+				s.setAttribute('content', content);
+				
+				if (httpEquiv != null) 
+				{
+					s.setAttribute('http-equiv', httpEquiv);
+				}
+
+			  	var t = document.getElementsByTagName('meta')[0];
+			  	t.parentNode.insertBefore(s, t);
+			}
+			catch (e)
+			{
+				// ignore
+			}
+		};
+		
+		/**
+		 * Synchronously adds scripts to the page.
+		 */
+		function mxscript(src, onLoad, id, dataAppKey, noWrite)
+		{
+			var defer = onLoad == null && !noWrite;
+			
+			if ((urlParams['dev'] != '1' && typeof document.createElement('canvas').getContext === "function") ||
+				onLoad != null || noWrite)
+			{
+				var s = document.createElement('script');
+				s.setAttribute('type', 'text/javascript');
+				s.setAttribute('defer', 'true');
+				s.setAttribute('src', src);
+
+				if (id != null)
+				{
+					s.setAttribute('id', id);
+				}
+				
+				if (dataAppKey != null)
+				{
+					s.setAttribute('data-app-key', dataAppKey);
+				}
+				
+				if (onLoad != null)
+				{
+					var r = false;
+				
+					s.onload = s.onreadystatechange = function()
+					{
+						if (!r && (!this.readyState || this.readyState == 'complete'))
+						{
+				      		r = true;
+				      		onLoad();
+						}
+				  	};
+				}
+			  	
+			  	var t = document.getElementsByTagName('script')[0];
+			  	
+			  	if (t != null)
+			  	{
+			  		t.parentNode.insertBefore(s, t);
+			  	}
+			}
+			else
+			{
+				document.write('<script src="' + src + '"' + ((id != null) ? ' id="' + id +'" ' : '') +
+					((dataAppKey != null) ? ' data-app-key="' + dataAppKey +'" ' : '') + '></scr' + 'ipt>');
+			}
+		};
+
+		/**
+		 * Asynchronously adds scripts to the page.
+		 */
+		function mxinclude(src)
+		{
+			var g = document.createElement('script');
+			g.type = 'text/javascript';
+			g.async = true;
+			g.src = src;
+			
+		    var s = document.getElementsByTagName('script')[0];
+		    s.parentNode.insertBefore(g, s);
+		};
+		
+		/**
+		 * Adds meta tags with application name (depends on offline URL parameter)
+		 */
+		(function()
+		{
+			var name = 'diagrams.net';
+			mxmeta('apple-mobile-web-app-title', name);
+			mxmeta('application-name', name);
+
+			if (mxIsElectron)
+			{
+				mxmeta(null, 'default-src \'self\' \'unsafe-inline\'; connect-src \'self\' https://*.draw.io https://fonts.googleapis.com https://fonts.gstatic.com; img-src * data:; media-src *; font-src *; style-src-elem \'self\' \'unsafe-inline\' https://fonts.googleapis.com', 'Content-Security-Policy');
+			}
+		})();
+		
+		// Checks for local storage
+		var isLocalStorage = false;
+		
+		try
+		{
+			isLocalStorage = urlParams['local'] != '1' && typeof(localStorage) != 'undefined';
+		}
+		catch (e)
+		{
+			// ignored
+		}
+
+		var mxScriptsLoaded = false, mxWinLoaded = false;
+		
+		function checkAllLoaded()
+		{
+			if (mxScriptsLoaded && mxWinLoaded)
+			{
+				App.main();				
+			}
+		};
+		
+		var t0 = new Date();
+
+		// Changes paths for local development environment
+		if (urlParams['dev'] == '1')
+		{
+			// Used to request grapheditor/mxgraph sources in dev mode
+			var mxDevUrl = document.location.protocol + '//devhost.jgraph.com/drawio/src/main';
+			
+			// Used to request draw.io sources in dev mode
+			var drawDevUrl = document.location.protocol + '//devhost.jgraph.com/drawio/src/main/webapp/';
+			var geBasePath = drawDevUrl + '/js/grapheditor';
+			var mxBasePath = mxDevUrl + '/mxgraph';
+			
+			if (document.location.protocol == 'file:')
+			{
+				geBasePath = './js/grapheditor';
+				mxBasePath = './mxgraph';
+				drawDevUrl = './';
+				
+				// Forces includes for dev environment in node.js
+				mxForceIncludes = true;
+			}
+
+			mxForceIncludes = false;
+
+			mxscript(drawDevUrl + 'js/PreConfig.js');
+			mxscript(drawDevUrl + 'js/diagramly/Init.js');
+			mxscript(geBasePath + '/Init.js');
+			mxscript(mxBasePath + '/mxClient.js');
+			
+			// Adds all JS code that depends on mxClient. This indirection via Devel.js is
+			// required in some browsers to make sure mxClient.js (and the files that it
+			// loads asynchronously) are available when the code loaded in Devel.js runs.
+			mxscript(drawDevUrl + 'js/diagramly/Devel.js');
+			
+			// Electron
+			if (mxIsElectron)
+			{
+				mxscript('js/diagramly/DesktopLibrary.js');
+				mxscript('js/diagramly/ElectronApp.js');
+			}
+			
+			mxscript(drawDevUrl + 'js/PostConfig.js');
+		}
+		else
+		{
+			(function()
+			{
+				var hostName = window.location.hostname;
+				
+				// Supported domains are *.draw.io and the packaged version in Quip
+				var supportedDomain = (hostName.substring(hostName.length - 8, hostName.length) === '.draw.io') ||
+					(hostName.substring(hostName.length - 13, hostName.length) === '.diagrams.net');
+				
+				function loadAppJS()
+				{
+					mxscript('js/app.min.js', function()
+					{
+						mxScriptsLoaded = true;
+						checkAllLoaded();
+						
+						// Electron
+						if (mxIsElectron)
+						{
+							mxscript('js/diagramly/DesktopLibrary.js', function()
+							{
+								mxscript('js/diagramly/ElectronApp.js', function()
+								{
+									mxscript('js/extensions.min.js', function()
+									{
+										mxscript('js/stencils.min.js', function()
+										{
+											mxscript('js/shapes-14-6-5.min.js', function()
+											{
+												mxscript('js/PostConfig.js');
+											});
+										});
+									});
+								});
+							});
+						}
+						else if (!supportedDomain)
+						{
+							mxscript('js/PostConfig.js');
+						}
+					});
+				};
+				
+				if (!supportedDomain || mxIsElectron)
+				{
+					mxscript('js/PreConfig.js', loadAppJS);
+				}
+				else
+				{
+					loadAppJS();
+				}
+			})();
+		}
+
+		// Adds basic error handling
+		window.onerror = function()
+		{
+			var status = document.getElementById('geStatus');
+			
+			if (status != null)
+			{
+				status.innerHTML = 'Page could not be loaded. Please try refreshing.';
+			}
+		};
+	</script>
+    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/plgmlhohecdddhbmmkncjdmlhcmaachm">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://app.diagrams.net/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://app.diagrams.net/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://app.diagrams.net/images/favicon-16x16.png">
+	<link rel="mask-icon" href="https://app.diagrams.net/images/safari-pinned-tab.svg" color="#d89000">
+    <link rel="stylesheet" type="text/css" href="./grapheditor.css">
+    <link rel="preconnect" href="https://storage.googleapis.com/">
+    <link rel="canonical" href="https://app.diagrams.net/">
+	<link rel="manifest" href="https://app.diagrams.net/images/manifest.json">
+	<link rel="shortcut icon" href="https://app.diagrams.net/favicon.ico">
+	<style type="text/css">
+		body { overflow:hidden; }
+		div.picker { z-index: 10007; }
+		.geSidebarContainer .geTitle input {
+			font-size:8pt;
+			color:#606060;
+		}
+		.geBlock {
+			z-index:-3;
+			margin:100px;
+			margin-top:40px;
+			margin-bottom:30px;
+			padding:20px;
+			text-align:center;
+			min-width:50%;
+		}
+		.geBlock h1, .geBlock h2 {
+			margin-top:0px;
+			padding-top:0px;
+		}
+		.geEditor *:not(.geScrollable)::-webkit-scrollbar {
+		    width:14px;
+		    height:14px;
+		}
+		.geEditor ::-webkit-scrollbar-track {
+			background-clip:padding-box;
+			border:solid transparent;
+			border-width:1px;
+		}
+		.geEditor ::-webkit-scrollbar-corner {
+			background-color:transparent;
+		}
+		.geEditor ::-webkit-scrollbar-thumb {
+			background-color:rgba(0,0,0,.1);
+			background-clip:padding-box;
+			border:solid transparent;
+			border-radius:10px;
+		}
+		.geEditor ::-webkit-scrollbar-thumb:hover {
+			background-color:rgba(0,0,0,.4);
+		}
+		.geTemplate {
+			border:1px solid transparent;
+			display:inline-block;
+			_display:inline;
+			vertical-align:top;
+			border-radius:3px;
+			overflow:hidden;
+			font-size:14pt;
+			cursor:pointer;
+			margin:5px;
+		}
+	</style>
+	<!-- Workaround for binary XHR in IE 9/10, see App.loadUrl -->
+	<!--[if (IE 9)|(IE 10)]><!-->
+		<script type="text/vbscript">
+			Function mxUtilsBinaryToArray(Binary)
+				Dim i
+				ReDim byteArray(LenB(Binary))
+				For i = 1 To LenB(Binary)
+					byteArray(i-1) = AscB(MidB(Binary, i, 1))
+				Next
+				mxUtilsBinaryToArray = byteArray
+			End Function
+		</script>
+	<!--<![endif]-->
+<style type="text/css"></style><link rel="stylesheet" href="./common.css" charset="UTF-8" type="text/css"><style type="text/css">* { -webkit-font-smoothing: antialiased; }html body td.mxWindowTitle > div > img { padding: 8px 4px; }html body div.geToolbarContainer a.geInverted { filter: invert(1); }html body.geEditor .geTabContainer div { border-color: #e5e5e5 !important; }html > body > div > a.geItem { background-color: #ffffff; color: #707070; border-top: 1px solid lightgray; border-left: 1px solid lightgray; }html body .geMenubarContainer { border-bottom:1px solid lightgray;background-color:#ffffff; }html body .mxWindow button.geBtn { font-size:12px !important; margin-left: 0; }html body .geSidebarContainer *:not(svg *) { font-size:9pt; }html body table.mxWindow td.mxWindowPane div.mxWindowPane *:not(svg *) { font-size:9pt; }table.mxWindow * :not(svg *) { font-size:13px; }html body .mxWindow { z-index: 3; }html body div.diagramContainer button, html body button.geBtn { font-size:14px; font-weight:700; border-radius: 5px; }html body button.geBtn:active { opacity: 0.6; }html body a.geMenuItem { opacity: 0.75; cursor: pointer; user-select: none; }html body a.geMenuItem[disabled] { opacity: 0.2; }html body a.geMenuItem[disabled]:active { opacity: 0.2; }html body div.geActivePage { opacity: 0.7; }html body a.geMenuItem:active { opacity: 0.2; }html body .geToolbarButton { opacity: 0.3; }html body .geToolbarButton:active { opacity: 0.15; }html body .geStatus:active { opacity: 0.5; }.geStatus > div { box-sizing: border-box; max-width: 100%; text-overflow: ellipsis; }html body .geStatus { padding-top:3px !important; }html body .geMenubarContainer .geStatus { margin-top: 0px !important; }html table.mxPopupMenu tr.mxPopupMenuItemHover:active { opacity: 0.7; }html body .geDialog input, html body .geToolbarContainer input, html body .mxWindow input {padding: 2px; display: inline-block; }html body .mxWindow input[type="checkbox"] {padding: 0px; }div.geDialog { border-radius: 5px; }html body div.geDialog button.geBigButton { color: #fff !important; border: none !important; }.mxWindow button, .geDialog select, .mxWindow select { display:inline-block; }html body .mxWindow .geColorBtn, html body .geDialog .geColorBtn { background: none; }html body div.diagramContainer button, html body .mxWindow button, html body .geDialog button { min-width: 0px; border-radius: 5px; color: #353535 !important; border-style: solid; border-width: 1px; border-color: rgb(216, 216, 216); }html body div.diagramContainer button:hover, html body .mxWindow button:hover, html body .geDialog button:hover { border-color: rgb(177, 177, 177); }html body div.diagramContainer button:active, html body .mxWindow button:active, html body .geDialog button:active { opacity: 0.6; }div.diagramContainer button.geBtn, .mxWindow button.geBtn, .geDialog button.geBtn { min-width:72px; font-weight: 600; background: none; }div.diagramContainer button.gePrimaryBtn, .mxWindow button.gePrimaryBtn, .geDialog button.gePrimaryBtn, html body .gePrimaryBtn { background: #29b6f2; color: #fff !important; border: none; box-shadow: none; }html body .gePrimaryBtn:hover { background: #29b6f2; border: none; box-shadow: inherit; }html body button.gePrimaryBtn:hover { background: #29b6f2; border: none; }.geBtn button { min-width:72px !important; }div.geToolbarContainer a.geButton { margin:0px; padding: 0 2px 4px 2px; } html body div.geToolbarContainer a.geColorBtn { margin: 2px; } html body .mxWindow td.mxWindowPane input, html body .mxWindow td.mxWindowPane select, html body .mxWindow td.mxWindowPane textarea, html body .mxWindow td.mxWindowPane radio { padding: 0px; box-sizing: border-box; }.geDialog, .mxWindow td.mxWindowPane *, div.geSprite, td.mxWindowTitle, .geDiagramContainer { box-sizing:content-box; }.mxWindow div button.geStyleButton { box-sizing: border-box; }table.mxWindow td.mxWindowPane button.geColorBtn { padding:0px; box-sizing: border-box; }td.mxWindowPane .geSidebarContainer button { padding:2px; box-sizing: border-box; }html body .geMenuItem { font-size:14px; text-decoration: none; font-weight: normal; padding: 6px 10px 6px 10px; border: none; border-radius: 5px; color: #353535; box-shadow: inset 0 0 0 1px rgba(0,0,0,.11), inset 0 -1px 0 0 rgba(0,0,0,.08), 0 1px 2px 0 rgba(0,0,0,.04); }.geTabContainer { border-bottom:1px solid lightgray; border-top:1px solid lightgray; background: #fff !important; }.geToolbarContainer { background: #fff; }div.geSidebarContainer { background-color: #fff; }div.geSidebarContainer .geTitle { background-color: #fdfdfd; }div.mxWindow td.mxWindowPane button { background-image: none; float: none; }td.mxWindowTitle { height: 22px !important; background: none !important; font-size: 13px !important; text-align:center !important; border-bottom:1px solid lightgray; }div.mxWindow, div.mxWindowTitle { background-image: none !important; background-color:#fff !important; }div.mxWindow { border-radius:5px; box-shadow: 0px 0px 2px #C0C0C0 !important;}div.mxWindow *:not(svg *) { font-family: inherit !important; }html div.geVerticalHandle { position:absolute;bottom:0px;left:50%;cursor:row-resize;width:11px;height:11px;background:white;margin-bottom:-6px; margin-left:-6px; border: none; border-radius: 6px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.11), inset 0 -1px 0 0 rgba(0,0,0,.08), 0 1px 2px 0 rgba(0,0,0,.04); }html div.geInactivePage { background: rgb(249, 249, 249) !important; color: #A0A0A0 !important; } html div.geActivePage { background:  #fff !important;  color: #353535 !important; } html div.mxRubberband { border:1px solid; border-color: #29b6f2 !important; background:rgba(41,182,242,0.4) !important; } html body div.mxPopupMenu { border-radius:5px; border:1px solid #c0c0c0; padding:5px 0 5px 0; box-shadow: 0px 4px 17px -4px rgba(96,96,96,1); } html table.mxPopupMenu td.mxPopupMenuItem { color: #353535; font-size: 14px; padding-top: 4px; padding-bottom: 4px; }html table.mxPopupMenu tr.mxPopupMenuItemHover { background-color: #29b6f2; }html tr.mxPopupMenuItemHover td.mxPopupMenuItem, html tr.mxPopupMenuItemHover td.mxPopupMenuItem span { color: #ffffff !important; }html tr.mxPopupMenuItem, html td.mxPopupMenuItem { transition-property: none !important; }html table.mxPopupMenu hr { height: 2px; background-color: rgba(0,0,0,.07); margin: 5px 0; }html body td.mxWindowTitle { padding-right: 14px; }html td.mxWindowTitle div { top: 0px !important; }a.geStatus > div { overflow: hidden; text-overflow: ellipsis; max-width: 100%; }</style><script type="text/javascript" src="./MathJax.js"></script><style type="text/css">div.MathJax_SVG_Display { position: static; }
+span.MathJax_SVG { position: static !important; }</style><style>@font-face { font-family: "Architects Daughter"; src: url(styles/fonts/ArchitectsDaughter-Regular.ttf) format("truetype"); }</style><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888; display: contents}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_SVG_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax_SVG .MJX-monospace {font-family: monospace}
+.MathJax_SVG .MJX-sans-serif {font-family: sans-serif}
+#MathJax_SVG_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax_SVG {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax_SVG * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_SVG > div {display: inline-block}
+.mjx-svg-href {fill: blue; stroke: blue}
+.MathJax_SVG_Processing {visibility: hidden; position: absolute; top: 0; left: 0; width: 0; height: 0; overflow: hidden; display: block!important}
+.MathJax_SVG_Processed {display: none!important}
+.MathJax_SVG_test {font-style: normal; font-weight: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow: hidden; height: 1px}
+.MathJax_SVG_test.mjx-test-display {display: table!important}
+.MathJax_SVG_test.mjx-test-inline {display: inline!important; margin-right: -1px}
+.MathJax_SVG_test.mjx-test-default {display: block!important; clear: both}
+.MathJax_SVG_ex_box {display: inline-block!important; position: absolute; overflow: hidden; min-height: 0; max-height: none; padding: 0; border: 0; margin: 0; width: 1px; height: 60ex}
+.mjx-test-inline .MathJax_SVG_left_box {display: inline-block; width: 0; float: left}
+.mjx-test-inline .MathJax_SVG_right_box {display: inline-block; width: 0; float: right}
+.mjx-test-display .MathJax_SVG_right_box {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+.MathJax_SVG .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body class="geEditor" style="background-color: rgb(255, 255, 255);"><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_SVG_Hidden"></div><svg><defs id="MathJax_SVG_glyphs"></defs></svg></div><div id="MathJax_Message" style="display: none;"></div>
+
+<script type="text/javascript">
+/**
+ * Main
+ */
+if (navigator.userAgent != null && navigator.userAgent.toLowerCase().
+	indexOf(' electron/') >= 0 && typeof process !== 'undefined' && process.versions.electron < 5)
+{
+	// Redirects old Electron app to latest version
+	var div = document.getElementById('geInfo');
+	
+	if (div != null)
+	{
+		div.innerHTML = '<center><h2>You are using an out of date version of this app.<br>Please download the latest version ' +
+			'<a href="https://github.com/jgraph/drawio-desktop/releases/latest" target="_blank">here</a>.</h2></center>';
+	}
+}
+else
+{
+	if (urlParams['dev'] != '1' && typeof document.createElement('canvas').getContext === "function")
+	{
+		window.addEventListener('load', function()
+		{
+			mxWinLoaded = true;
+			checkAllLoaded();
+		});
+	}
+	else
+	{
+		App.main();
+	}
+}
+</script>
+
+
+<div style="visibility: hidden; position: absolute; overflow: hidden; height: 1px; width: 1px;"><svg style="left: 0px; top: 0px; width: 100%; height: 100%; display: block; min-width: 4px; min-height: 12px;"><g><g></g><g></g><g></g><g></g></g></svg></div><div class="mxWindow" style="left: 160px; top: 60px; width: 90px; height: 580px; z-index: 4;"><table class="mxWindow" style="width: 90px; height: 580px;"><tbody><tr><td class="mxWindowTitle" style="cursor: move;">Format<div style="position: absolute; display: inline-block; right: 4px; top: 5px;"><img src="./maximize.gif" title="Maximize" style="cursor: pointer; margin-left: 2px; display: none;"><img src="data:image/svg+xml;base64,PCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSIxNHB4IiBoZWlnaHQ9IjEwcHgiIHZlcnNpb249IjEuMSI+PHBhdGggZD0iTSAzIDMgTCA3IDcgTCAxMSAzIiBzdHJva2U9IiNDMEMwQzAiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==" title="Normalize" style="cursor: pointer; margin-left: 2px;"><img src="data:image/svg+xml;base64,PCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSIxOHB4IiBoZWlnaHQ9IjEwcHgiIHZlcnNpb249IjEuMSI+PHBhdGggZD0iTSA1IDEgTCAxMyA5IE0gMTMgMSBMIDUgOSIgc3Ryb2tlPSIjQzBDMEMwIiBzdHJva2Utd2lkdGg9IjIiLz48L3N2Zz4=" title="Close" style="margin-left: 2px; cursor: pointer; display: none;"></div></td></tr><tr><td class="mxWindowPane"><div class="mxWindowPane" style="width: 100%; display: none;"><div class="geSidebarContainer" style="position: absolute; width: 100%; height: 100%; border: 1px solid whitesmoke; overflow: hidden auto;"><div style="white-space: nowrap; color: rgb(112, 112, 112); text-align: left; cursor: default;"><div class="geFormatSection" style="text-align: center; font-weight: bold; padding-top: 8px; font-size: 13px; border-width: 0px; border-style: solid; display: inline-block; height: 25px; overflow: hidden; width: 50%; cursor: pointer;">Diagram</div><div class="geFormatSection" style="text-align: center; font-weight: bold; padding-top: 8px; font-size: 13px; border-width: 0px 1px 1px; border-style: solid; display: inline-block; height: 25px; overflow: hidden; width: 50%; cursor: pointer; background-color: rgb(240, 240, 240);">Style</div></div><div style="white-space: nowrap; color: rgb(112, 112, 112); text-align: left; cursor: default;"><div class="geFormatSection" style="padding: 12px 0px 12px 14px;"><div style="padding: 0px 0px 6px; white-space: nowrap; overflow: hidden; width: 200px; font-weight: bold;">View</div><div style="padding: 3px 0px; white-space: nowrap; overflow: hidden; width: 200px; height: 18px;"><input type="checkbox" style="margin: 1px 6px 0px 0px; vertical-align: top;"><span style="vertical-align: top;">Grid</span><input type="color" style="visibility: hidden; width: 0px; height: 0px; border: none;"><button class="geColorBtn" title="Shift+Click for Color Dropper" style="position: absolute; margin-top: -3px; left: 178px; height: 22px; display: none;"><div style="width: 36px; height: 12px; margin: 3px; border: 1px solid black; background-color: rgb(208, 208, 208);"></div></button><input style="position: absolute; text-align: right; width: 48px; margin-top: -2px; height: 21px; border: 1px solid rgb(160, 160, 160); border-radius: 4px; box-sizing: border-box; display: none; right: 78px;"><div style="border-radius: 3px; border: 1px solid rgb(192, 192, 192); position: absolute; display: none; margin-top: -17px; right: 66px;"><div class="geBtnUp" style="border-bottom: 1px solid rgb(192, 192, 192); position: relative; height: 9px; width: 10px;"></div><div class="geBtnDown" style="border: none; position: relative; height: 9px; width: 10px;"></div></div></div><div style="padding: 3px 0px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; width: 200px; height: 18px;"><input type="checkbox" style="margin: 1px 6px 0px 0px; vertical-align: top;"><span style="vertical-align: top; user-select: none;">Page View</span></div><div style="padding: 3px 0px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; width: 200px; height: 18px;"><input type="checkbox" style="margin: 1px 6px 0px 0px; vertical-align: top;"><span style="vertical-align: top; user-select: none;">Shadow</span></div></div></div><div style="white-space: nowrap; color: rgb(112, 112, 112); text-align: left; cursor: default; display: none;"><div class="geFormatSection" style="padding: 8px 0px 8px 14px; white-space: normal;"><div style="margin-right: 16px;"><table style="width: 210px; font-weight: bold;"><tbody><tr style="padding: 0px;"><td valign="middle" style="padding: 0px 0px 0px 8px; width: 50%;"><div style="padding: 3px 0px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; width: auto; height: 18px;"><input type="checkbox" style="margin: 1px 6px 0px 0px; vertical-align: top;"><span style="vertical-align: top; user-select: none;">Rounded</span></div></td></tr></tbody></table></div><div style="position: relative;"><div style="display: inline-block; position: relative; width: 96px; height: 90px; cursor: pointer; border: 1px solid gray; border-radius: 8px; margin: 2px; overflow: hidden;"><div style="position: absolute; display: inline-block; overflow: hidden; pointer-events: none; width: 100%; height: 100%;"><svg style="left: 0px; top: 0px; width: 100%; height: 100%; display: block; min-width: 85px; min-height: 78px;"><g><g></g><g><g style="visibility: visible;"><rect x="14" y="8" width="70" height="40" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="2" pointer-events="all"></rect></g><g style=""><g fill="rgb(0, 0, 0)" font-family="Helvetica" text-anchor="middle" font-size="12px"><text x="49" y="33">Shape</text></g></g><g style="visibility: visible;"><path d="M 32 48 L 32 70 L 66 70 L 66 55.49" fill="none" stroke="white" stroke-width="10" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden"></path><path d="M 32 48 L 32 70 L 66 70 L 66 55.49" fill="none" stroke="rgb(0, 0, 0)" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 66 50.24 L 69.5 57.24 L 66 55.49 L 62.5 57.24 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-width="2" stroke-miterlimit="10" pointer-events="all"></path></g><g style=""><g fill="rgb(0, 0, 0)" font-family="Helvetica" text-anchor="middle" font-size="11px"><rect fill="rgb(255, 255, 255)" stroke="none" x="49" y="79" width="2" height="1" stroke-width="0"></rect><text x="49" y="82.5">Connector</text></g></g></g><g></g><g></g></g></svg></div></div><div style="display: inline-block; position: relative; width: 96px; height: 90px; cursor: pointer; border: 1px solid gray; border-radius: 8px; margin: 2px; overflow: hidden;"><div style="position: absolute; display: inline-block; overflow: hidden; pointer-events: none; width: 100%; height: 100%;"><svg style="left: 0px; top: 0px; width: 100%; height: 100%; display: block; min-width: 85px; min-height: 78px;"><g><g></g><g><g style="visibility: visible;"><rect x="14" y="8" width="70" height="40" fill="#21c0a5" stroke="#006658" stroke-width="2" pointer-events="all"></rect></g><g style=""><g fill="#5C5C5C" font-family="Helvetica" text-anchor="middle" font-size="12px"><text x="49" y="33">Shape</text></g></g><g style="visibility: visible;"><path d="M 32 48 L 32 70 L 66 70 L 66 55.49" fill="none" stroke="white" stroke-width="10" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden"></path><path d="M 32 48 L 32 70 L 66 70 L 66 55.49" fill="none" stroke="#006658" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 66 50.24 L 69.5 57.24 L 66 55.49 L 62.5 57.24 Z" fill="#006658" stroke="#006658" stroke-width="2" stroke-miterlimit="10" pointer-events="all"></path></g><g style=""><g fill="#5C5C5C" font-family="Helvetica" text-anchor="middle" font-size="11px"><rect fill="#ffffff" stroke="none" x="49" y="79" width="2" height="1" stroke-width="0"></rect><text x="49" y="82.5">Connector</text></g></g></g><g></g><g></g></g></svg></div></div><div style="display: inline-block; position: relative; width: 96px; height: 90px; cursor: pointer; border: 1px solid gray; border-radius: 8px; margin: 2px; overflow: hidden;"><div style="position: absolute; display: inline-block; overflow: hidden; pointer-events: none; width: 100%; height: 100%;"><svg style="left: 0px; top: 0px; width: 100%; height: 100%; display: block; min-width: 85px; min-height: 78px;"><g><g></g><g><g style="visibility: visible;"><rect x="14" y="8" width="70" height="40" fill="#f694c1" stroke="#af45ed" stroke-width="2" pointer-events="all"></rect></g><g style=""><g fill="#095C86" font-family="Helvetica" text-anchor="middle" font-size="12px"><text x="49" y="33">Shape</text></g></g><g style="visibility: visible;"><path d="M 32 48 L 32 70 L 66 70 L 66 55.49" fill="none" stroke="white" stroke-width="10" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden"></path><path d="M 32 48 L 32 70 L 66 70 L 66 55.49" fill="none" stroke="#60e696" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 66 50.24 L 69.5 57.24 L 66 55.49 L 62.5 57.24 Z" fill="#60e696" stroke="#60e696" stroke-width="2" stroke-miterlimit="10" pointer-events="all"></path></g><g style=""><g fill="#095C86" font-family="Helvetica" text-anchor="middle" font-size="11px"><rect fill="#ffffff" stroke="none" x="49" y="79" width="2" height="1" stroke-width="0"></rect><text x="49" y="82.5">Connector</text></g></g></g><g></g><g></g></g></svg></div></div><div style="display: inline-block; position: relative; width: 96px; height: 90px; cursor: pointer; border: 1px solid gray; border-radius: 8px; margin: 2px; overflow: hidden;"><div style="position: absolute; display: inline-block; overflow: hidden; pointer-events: none; width: 100%; height: 100%;"><svg style="left: 0px; top: 0px; width: 100%; height: 100%; display: block; min-width: 85px; min-height: 78px;"><g><g></g><g><g style="visibility: visible;"><rect x="14" y="8" width="70" height="40" fill="#b2c9ab" stroke="#788aa3" stroke-width="2" pointer-events="all"></rect></g><g style=""><g fill="#46495D" font-family="Helvetica" text-anchor="middle" font-size="12px"><text x="49" y="33">Shape</text></g></g><g style="visibility: visible;"><path d="M 32 48 L 32 70 L 66 70 L 66 55.49" fill="none" stroke="white" stroke-width="10" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden"></path><path d="M 32 48 L 32 70 L 66 70 L 66 55.49" fill="none" stroke="#788aa3" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 66 50.24 L 69.5 57.24 L 66 55.49 L 62.5 57.24 Z" fill="#788aa3" stroke="#788aa3" stroke-width="2" stroke-miterlimit="10" pointer-events="all"></path></g><g style=""><g fill="#46495D" font-family="Helvetica" text-anchor="middle" font-size="11px"><rect fill="#ffffff" stroke="none" x="49" y="79" width="2" height="1" stroke-width="0"></rect><text x="49" y="82.5">Connector</text></g></g></g><g></g><g></g></g></svg></div></div><div style="display: inline-block; position: relative; width: 96px; height: 90px; cursor: pointer; border: 1px solid gray; border-radius: 8px; margin: 2px; overflow: hidden;"><div style="position: absolute; display: inline-block; overflow: hidden; pointer-events: none; width: 100%; height: 100%;"><svg style="left: 0px; top: 0px; width: 100%; height: 100%; display: block; min-width: 85px; min-height: 78px;"><g><g></g><g><g style="visibility: visible;"><rect x="14" y="8" width="70" height="40" fill="#ffe45e" stroke="#ff6392" stroke-width="2" pointer-events="all"></rect></g><g style=""><g fill="#5AA9E6" font-family="Helvetica" text-anchor="middle" font-size="12px"><text x="49" y="33">Shape</text></g></g><g style="visibility: visible;"><path d="M 32 48 L 32 70 L 66 70 L 66 55.49" fill="none" stroke="white" stroke-width="10" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden"></path><path d="M 32 48 L 32 70 L 66 70 L 66 55.49" fill="none" stroke="#ff6392" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 66 50.24 L 69.5 57.24 L 66 55.49 L 62.5 57.24 Z" fill="#ff6392" stroke="#ff6392" stroke-width="2" stroke-miterlimit="10" pointer-events="all"></path></g><g style=""><g fill="#5AA9E6" font-family="Helvetica" text-anchor="middle" font-size="11px"><rect fill="#ffffff" stroke="none" x="49" y="79" width="2" height="1" stroke-width="0"></rect><text x="49" y="82.5">Connector</text></g></g></g><g></g><g></g></g></svg></div></div><div style="display: inline-block; position: relative; width: 96px; height: 90px; cursor: pointer; border: 1px solid gray; border-radius: 8px; margin: 2px; overflow: hidden; background-color: rgb(241, 250, 238);"><div style="position: absolute; display: inline-block; overflow: hidden; pointer-events: none; width: 100%; height: 100%;"><svg style="left: 0px; top: 0px; width: 100%; height: 100%; display: block; min-width: 85px; min-height: 78px;"><g><g></g><g><g style="visibility: visible;"><rect x="14" y="8" width="70" height="40" fill="#a8dadc" stroke="#457b9d" stroke-width="2" pointer-events="all"></rect></g><g style=""><g fill="#1D3557" font-family="Helvetica" text-anchor="middle" font-size="12px"><text x="49" y="33">Shape</text></g></g><g style="visibility: visible;"><path d="M 32 48 L 32 70 L 66 70 L 66 55.49" fill="none" stroke="white" stroke-width="10" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden"></path><path d="M 32 48 L 32 70 L 66 70 L 66 55.49" fill="none" stroke="#457b9d" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 66 50.24 L 69.5 57.24 L 66 55.49 L 62.5 57.24 Z" fill="#457b9d" stroke="#457b9d" stroke-width="2" stroke-miterlimit="10" pointer-events="all"></path></g><g style=""><g fill="#1D3557" font-family="Helvetica" text-anchor="middle" font-size="11px"><rect fill="#F1FAEE" stroke="none" x="49" y="79" width="2" height="1" stroke-width="0"></rect><text x="49" y="82.5">Connector</text></g></g></g><g></g><g></g></g></svg></div></div><div style="display: inline-block; position: relative; width: 96px; height: 90px; cursor: pointer; border: 1px solid gray; border-radius: 8px; margin: 2px; overflow: hidden; background-color: rgb(244, 241, 222);"><div style="position: absolute; display: inline-block; overflow: hidden; pointer-events: none; width: 100%; height: 100%;"><svg style="left: 0px; top: 0px; width: 100%; height: 100%; display: block; min-width: 85px; min-height: 78px;"><g><g></g><g><g style="visibility: visible;"><rect x="14" y="8" width="70" height="40" fill="#f2cc8f" stroke="#e07a5f" stroke-width="2" pointer-events="all"></rect></g><g style=""><g fill="#393C56" font-family="Helvetica" text-anchor="middle" font-size="12px"><text x="49" y="33">Shape</text></g></g><g style="visibility: visible;"><path d="M 32 48 L 32 70 L 66 70 L 66 55.49" fill="none" stroke="white" stroke-width="10" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden"></path><path d="M 32 48 L 32 70 L 66 70 L 66 55.49" fill="none" stroke="#e07a5f" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 66 50.24 L 69.5 57.24 L 66 55.49 L 62.5 57.24 Z" fill="#e07a5f" stroke="#e07a5f" stroke-width="2" stroke-miterlimit="10" pointer-events="all"></path></g><g style=""><g fill="#393C56" font-family="Helvetica" text-anchor="middle" font-size="11px"><rect fill="#F4F1DE" stroke="none" x="49" y="79" width="2" height="1" stroke-width="0"></rect><text x="49" y="82.5">Connector</text></g></g></g><g></g><g></g></g></svg></div></div><div style="display: inline-block; position: relative; width: 96px; height: 90px; cursor: pointer; border: 1px solid gray; border-radius: 8px; margin: 2px; overflow: hidden; background-color: rgb(218, 210, 216);"><div style="position: absolute; display: inline-block; overflow: hidden; pointer-events: none; width: 100%; height: 100%;"><svg style="left: 0px; top: 0px; width: 100%; height: 100%; display: block; min-width: 85px; min-height: 78px;"><g><g></g><g><g style="visibility: visible;"><rect x="14" y="8" width="70" height="40" fill="#fae5c7" stroke="#0f8b8d" stroke-width="2" pointer-events="all"></rect></g><g style=""><g fill="#143642" font-family="Helvetica" text-anchor="middle" font-size="12px"><text x="49" y="33">Shape</text></g></g><g style="visibility: visible;"><path d="M 32 48 L 32 70 L 66 70 L 66 55.49" fill="none" stroke="white" stroke-width="10" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden"></path><path d="M 32 48 L 32 70 L 66 70 L 66 55.49" fill="none" stroke="#a8201a" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 66 50.24 L 69.5 57.24 L 66 55.49 L 62.5 57.24 Z" fill="#a8201a" stroke="#a8201a" stroke-width="2" stroke-miterlimit="10" pointer-events="all"></path></g><g style=""><g fill="#143642" font-family="Helvetica" text-anchor="middle" font-size="11px"><rect fill="#DAD2D8" stroke="none" x="49" y="79" width="2" height="1" stroke-width="0"></rect><text x="49" y="82.5">Connector</text></g></g></g><g></g><g></g></g></svg></div></div><div style="display: inline-block; position: relative; width: 96px; height: 90px; cursor: pointer; border: 1px solid gray; border-radius: 8px; margin: 2px; overflow: hidden; background-color: rgb(40, 54, 24);"><div style="position: absolute; display: inline-block; overflow: hidden; pointer-events: none; width: 100%; height: 100%;"><svg style="left: 0px; top: 0px; width: 100%; height: 100%; display: block; min-width: 85px; min-height: 78px;"><g><g></g><g><g style="visibility: visible;"><rect x="14" y="8" width="70" height="40" fill="#bc6c25" stroke="#dda15e" stroke-width="2" pointer-events="all"></rect></g><g style=""><g fill="#FEFAE0" font-family="Helvetica" text-anchor="middle" font-size="12px"><text x="49" y="33">Shape</text></g></g><g style="visibility: visible;"><path d="M 32 48 L 32 70 L 66 70 L 66 55.49" fill="none" stroke="white" stroke-width="10" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden"></path><path d="M 32 48 L 32 70 L 66 70 L 66 55.49" fill="none" stroke="#dda15e" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 66 50.24 L 69.5 57.24 L 66 55.49 L 62.5 57.24 Z" fill="#dda15e" stroke="#dda15e" stroke-width="2" stroke-miterlimit="10" pointer-events="all"></path></g><g style=""><g fill="#FEFAE0" font-family="Helvetica" text-anchor="middle" font-size="11px"><rect fill="#283618" stroke="none" x="49" y="79" width="2" height="1" stroke-width="0"></rect><text x="49" y="82.5">Connector</text></g></g></g><g></g><g></g></g></svg></div></div><div style="display: inline-block; position: relative; width: 96px; height: 90px; cursor: pointer; border: 1px solid gray; border-radius: 8px; margin: 2px; overflow: hidden; background-color: rgb(17, 75, 95);"><div style="position: absolute; display: inline-block; overflow: hidden; pointer-events: none; width: 100%; height: 100%;"><svg style="left: 0px; top: 0px; width: 100%; height: 100%; display: block; min-width: 85px; min-height: 78px;"><g><g></g><g><g style="visibility: visible;"><rect x="14" y="8" width="70" height="40" fill="#f45b69" stroke="#028090" stroke-width="2" pointer-events="all"></rect></g><g style=""><g fill="#E4FDE1" font-family="Helvetica" text-anchor="middle" font-size="12px"><text x="49" y="33">Shape</text></g></g><g style="visibility: visible;"><path d="M 32 48 L 32 70 L 66 70 L 66 55.49" fill="none" stroke="white" stroke-width="10" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden"></path><path d="M 32 48 L 32 70 L 66 70 L 66 55.49" fill="none" stroke="#028090" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 66 50.24 L 69.5 57.24 L 66 55.49 L 62.5 57.24 Z" fill="#028090" stroke="#028090" stroke-width="2" stroke-miterlimit="10" pointer-events="all"></path></g><g style=""><g fill="#E4FDE1" font-family="Helvetica" text-anchor="middle" font-size="11px"><rect fill="#114B5F" stroke="none" x="49" y="79" width="2" height="1" stroke-width="0"></rect><text x="49" y="82.5">Connector</text></g></g></g><g></g><g></g></g></svg></div></div></div><div style="white-space: nowrap; position: relative; text-align: center; padding-top: 4px; width: 210px;"><div style="display: inline-block; width: 6px; height: 6px; margin-left: 4px; margin-right: 3px; border-radius: 3px; cursor: pointer; background: rgb(132, 215, 255); border: 1px solid rgb(181, 182, 183);"></div><div style="display: inline-block; width: 6px; height: 6px; margin-left: 4px; margin-right: 3px; border-radius: 3px; cursor: pointer; background: transparent; border: 1px solid rgb(181, 182, 183);"></div><div style="position: absolute; left: 0px; top: 0px; bottom: 0px; width: 24px; height: 24px; margin: 0px; cursor: pointer; opacity: 0.5; background-repeat: no-repeat; background-position: center center; background-size: 24px 24px; background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMThweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMThweCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTAgMGgyNHYyNEgwVjB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTE1LjQxIDcuNDFMMTQgNmwtNiA2IDYgNiAxLjQxLTEuNDFMMTAuODMgMTJsNC41OC00LjU5eiIvPjwvc3ZnPg==&quot;);"></div><div style="position: absolute; top: 0px; bottom: 0px; width: 24px; height: 24px; margin: 0px; cursor: pointer; opacity: 0.5; background-repeat: no-repeat; background-position: center center; background-size: 24px 24px; background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMThweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMThweCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTAgMGgyNHYyNEgwVjB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTEwIDZMOC41OSA3LjQxIDEzLjE3IDEybC00LjU4IDQuNTlMMTAgMThsNi02LTYtNnoiLz48L3N2Zz4=&quot;); right: 2px;"></div></div></div></div></div></div></td></tr></tbody></table><img src="./resize.gif" style="position: absolute; bottom: 2px; right: 2px; cursor: nw-resize; visibility: hidden;"></div><div style="position: absolute; inset: 0px; overflow: hidden;"><div class="geToolbarContainer" style="position: absolute; left: 70px; top: 10px; height: 30px; z-index: 1; border-radius: 4px; box-shadow: rgb(209, 209, 209) 0px 0px 3px 1px; padding: 6px; border-bottom: 1px solid lightgray; text-align: right; white-space: nowrap; overflow: hidden; user-select: none;"><a class="geToolbarButton" title="Diagram" style="display: inline-block; box-sizing: border-box; top: 6px; margin: 0px; height: 30px; padding: 6px; cursor: pointer; background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjRweCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTAgMGgyNHYyNEgwVjB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTMgMThoMTh2LTJIM3Yyem0wLTVoMTh2LTJIM3Yyem0wLTd2MmgxOFY2SDN6Ii8+PC9zdmc+&quot;); background-position: center center; background-repeat: no-repeat; background-size: 24px 24px; width: 34px; box-shadow: none;"></a><a class="geToolbarButton" title="Delete" disabled="disabled" style="display: inline-block; box-sizing: border-box; height: 30px; padding: 6px; position: relative; vertical-align: top; top: 0px; border-style: none; box-shadow: none; margin: 0px 4px 0px 0px; background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMThweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMThweCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTAgMGgyNHYyNEgwVjB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTE2IDl2MTBIOFY5aDhtLTEuNS02aC01bC0xIDFINXYyaDE0VjRoLTMuNWwtMS0xek0xOCA3SDZ2MTJjMCAxLjEuOSAyIDIgMmg4YzEuMSAwIDItLjkgMi0yVjd6Ii8+PC9zdmc+&quot;); background-position: center center; background-repeat: no-repeat; background-size: 24px 24px; width: 34px; cursor: default; opacity: 0.1;"></a><a class="geToolbarButton" title="Undo (Cmd+Z)" disabled="disabled" style="display: none; box-sizing: border-box; height: 30px; padding: 6px; position: relative; vertical-align: top; top: 0px; border-style: none; box-shadow: none; margin: 0px 4px 0px 0px; background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIuNSA4Yy0yLjY1IDAtNS4wNS45OS02LjkgMi42TDIgN3Y5aDlsLTMuNjItMy42MmMxLjM5LTEuMTYgMy4xNi0xLjg4IDUuMTItMS44OCAzLjU0IDAgNi41NSAyLjMxIDcuNiA1LjVsMi4zNy0uNzhDMjEuMDggMTEuMDMgMTcuMTUgOCAxMi41IDh6Ii8+PC9zdmc+&quot;); background-position: center center; background-repeat: no-repeat; background-size: 24px 24px; width: 34px; cursor: default; opacity: 0.1;"></a><a class="geToolbarButton" title="Redo (Cmd+Shift+Z)" disabled="disabled" style="display: none; box-sizing: border-box; height: 30px; padding: 6px; position: relative; vertical-align: top; top: 0px; border-style: none; box-shadow: none; margin: 0px 4px 0px 0px; background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTguNCAxMC42QzE2LjU1IDguOTkgMTQuMTUgOCAxMS41IDhjLTQuNjUgMC04LjU4IDMuMDMtOS45NiA3LjIyTDMuOSAxNmMxLjA1LTMuMTkgNC4wNS01LjUgNy42LTUuNSAxLjk1IDAgMy43My43MiA1LjEyIDEuODhMMTMgMTZoOVY3bC0zLjYgMy42eiIvPjwvc3ZnPg==&quot;); background-position: center center; background-repeat: no-repeat; background-size: 24px 24px; width: 34px; cursor: default; opacity: 0.1;"></a></div><div class="geToolbarContainer" style="position: absolute; right: 14px; bottom: 14px; height: 28px; z-index: 1; border-radius: 4px; box-shadow: rgb(209, 209, 209) 0px 0px 3px 1px; padding: 8px; white-space: nowrap; user-select: none;"><div title="Pages" style="display: none; white-space: nowrap; box-sizing: border-box; overflow: hidden; text-align: center; height: 100%; padding: 6px; cursor: pointer; color: gray; width: auto; margin: 0px; box-shadow: none; vertical-align: top; max-width: 160px; position: relative; text-overflow: ellipsis; opacity: 0.8;"></div><a class="geToolbarButton" title="Zoom Out (Cmd -/Alt+Mousewheel)" disabled="disabled" style="display: inline-block; box-sizing: border-box; height: 30px; padding: 6px; position: relative; vertical-align: top; top: 0px; border-style: none; box-shadow: none; margin: 0px; background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTUuNSAxNGgtLjc5bC0uMjgtLjI3QzE1LjQxIDEyLjU5IDE2IDExLjExIDE2IDkuNSAxNiA1LjkxIDEzLjA5IDMgOS41IDNTMyA1LjkxIDMgOS41IDUuOTEgMTYgOS41IDE2YzEuNjEgMCAzLjA5LS41OSA0LjIzLTEuNTdsLjI3LjI4di43OWw1IDQuOTlMMjAuNDkgMTlsLTQuOTktNXptLTYgMEM3LjAxIDE0IDUgMTEuOTkgNSA5LjVTNy4wMSA1IDkuNSA1IDE0IDcuMDEgMTQgOS41IDExLjk5IDE0IDkuNSAxNHpNNyA5aDV2MUg3eiIvPjwvc3ZnPg==&quot;); background-position: center center; background-repeat: no-repeat; background-size: 24px 24px; width: 34px; cursor: default;"></a><div title="Fit Window/Reset View (Enter)" style="display: inline-block; cursor: pointer; text-align: center; white-space: nowrap; padding: 6px 0px; text-decoration: none; vertical-align: top; font-size: 14px; width: 40px; opacity: 0.4;">100%</div><a class="geToolbarButton" title="Zoom In (Cmd +/Alt+Mousewheel)" disabled="disabled" style="display: inline-block; box-sizing: border-box; height: 30px; padding: 6px; position: relative; vertical-align: top; top: 0px; border-style: none; box-shadow: none; margin: 0px; background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTUuNSAxNGgtLjc5bC0uMjgtLjI3QzE1LjQxIDEyLjU5IDE2IDExLjExIDE2IDkuNSAxNiA1LjkxIDEzLjA5IDMgOS41IDNTMyA1LjkxIDMgOS41IDUuOTEgMTYgOS41IDE2YzEuNjEgMCAzLjA5LS41OSA0LjIzLTEuNTdsLjI3LjI4di43OWw1IDQuOTlMMjAuNDkgMTlsLTQuOTktNXptLTYgMEM3LjAxIDE0IDUgMTEuOTkgNSA5LjVTNy4wMSA1IDkuNSA1IDE0IDcuMDEgMTQgOS41IDExLjk5IDE0IDkuNSAxNHptMi41LTRoLTJ2Mkg5di0ySDdWOWgyVjdoMXYyaDJ2MXoiLz48L3N2Zz4=&quot;); background-position: center center; background-repeat: no-repeat; background-size: 24px 24px; width: 34px; cursor: default;"></a></div><div class="geToolbarContainer" style="position: absolute; left: 10px; z-index: 1; border-radius: 4px; box-shadow: rgb(209, 209, 209) 0px 0px 3px 1px; padding: 8px 6px 4px; white-space: nowrap; transform: translate(0px, -50%); top: 50%; user-select: none; transition: transform 0.3s ease-out 0s;"><a class="geItem" title="Text (Cmd+Shift+X)" style="overflow: hidden; width: 34px; height: 32px; padding: 1px; cursor: default; margin: 2px 0px;"><svg style="left: 1px; top: 1px; width: 32px; height: 30px; display: block; position: relative; overflow: hidden;"><g><g></g><g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="0.98" y="7.35" width="29.4" height="14.7" fill="none" stroke="white" pointer-events="stroke" visibility="hidden" stroke-width="9"></rect><rect x="0.98" y="7.35" width="29.4" height="14.7" fill="none" stroke="none" pointer-events="all"></rect></g><g style=""><g transform="scale(0.49)"><foreignobject pointer-events="none" width="205%" height="205%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 30px; margin-left: 3px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">Text</div></div></div></foreignobject></g></g></g><g></g><g></g></g></svg></a><br><a class="geItem" title="Note" style="overflow: hidden; width: 34px; height: 32px; padding: 1px; cursor: default; margin: 2px 0px;"><svg style="left: 1px; top: 1px; width: 32px; height: 30px; display: block; position: relative; overflow: hidden;"><g><g></g><g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 3.91 1.02 L 24.31 1.02 L 27.71 4.42 L 27.71 28.22 L 3.91 28.22 L 3.91 1.02 Z" fill="#000000" stroke="none" transform="translate(0.34,0.51)rotate(180,15.81,14.62)" pointer-events="all" opacity="0.25"></path><path d="M 3.91 1.02 L 24.31 1.02 L 27.71 4.42 L 27.71 28.22 L 3.91 28.22 L 3.91 1.02 Z" fill="url(#mx-gradient-fff2a1-1-fff9b2-1-s-0)" stroke="none" transform="rotate(180,15.81,14.62)" pointer-events="all"></path><path d="M 24.31 1.02 L 24.31 4.42 L 27.71 4.42 Z" fill-opacity="0.05" fill="#000000" stroke="none" transform="rotate(180,15.81,14.62)" pointer-events="all"></path><path d="M 24.31 1.02 L 24.31 4.42 L 27.71 4.42" fill="none" stroke="white" transform="rotate(180,15.81,14.62)" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 24.31 1.02 L 24.31 4.42 L 27.71 4.42" fill="none" stroke="none" transform="rotate(180,15.81,14.62)" pointer-events="all"></path></g></g><g></g><g></g></g><lineargradient x1="0%" y1="100%" x2="0%" y2="0%" id="mx-gradient-fff2a1-1-fff9b2-1-s-0"><stop offset="0%" style="stop-color: rgb(255, 249, 178); stop-opacity: 1;"></stop><stop offset="100%" style="stop-color: rgb(255, 242, 161); stop-opacity: 1;"></stop></lineargradient></svg></a><br><a class="geItem" title="Rectangle (Cmd+K)" style="overflow: hidden; width: 34px; height: 32px; padding: 1px; cursor: default; margin: 2px 0px;"><svg style="left: 1px; top: 1px; width: 32px; height: 30px; display: block; position: relative; overflow: hidden;"><g><g></g><g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="1.44" y="7.74" width="28.8" height="14.4" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="1.3" pointer-events="all"></rect></g></g><g></g><g></g></g></svg></a><br><a class="geItem" title="Ellipse" style="overflow: hidden; width: 34px; height: 32px; padding: 1px; cursor: default; margin: 2px 0px;"><svg style="left: 1px; top: 1px; width: 32px; height: 30px; display: block; position: relative; overflow: hidden;"><g><g></g><g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="15.84" cy="14.94" rx="14.399999999999999" ry="9" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="1.3" pointer-events="all"></ellipse></g></g><g></g><g></g></g></svg></a><br><a class="geItem" title="Line" style="overflow: hidden; width: 34px; height: 32px; padding: 1px; cursor: default; margin: 2px 0px;"><svg style="left: 1px; top: 1px; width: 32px; height: 30px; display: block; position: relative; overflow: hidden;"><g><g></g><g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 4.37 14.82 Q 4.37 14.82 26.75 14.82" fill="none" stroke="white" stroke-width="9.3" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden"></path><path d="M 4.37 14.82 Q 4.37 14.82 26.75 14.82" fill="none" stroke="rgb(0, 0, 0)" stroke-width="1.3" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 24.11 16.25 L 26.96 14.82 L 24.11 13.39" fill="none" stroke="white" stroke-width="9.3" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden"></path><path d="M 24.11 16.25 L 26.96 14.82 L 24.11 13.39" fill="none" stroke="rgb(0, 0, 0)" stroke-width="1.3" stroke-miterlimit="10" pointer-events="all"></path></g></g><g></g><g></g></g></svg></a><br><a class="geItem" title="Arrow" style="overflow: hidden; width: 34px; height: 32px; padding: 1px 1px 14px; cursor: default; margin: 2px 0px 14px; border-bottom: 1px solid lightgray;"><svg style="left: 1px; top: 1px; width: 32px; height: 30px; display: block; position: relative; overflow: hidden;"><g><g></g><g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 4 15.64 L 4 13.94 L 23.38 13.94 L 23.38 12.16 L 27.63 14.79 L 23.38 17.43 L 23.38 15.64 Z" fill="none" stroke="white" stroke-width="9.3" stroke-linejoin="round" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden"></path><path d="M 4 15.64 L 4 13.94 L 23.38 13.94 L 23.38 12.16 L 27.63 14.79 L 23.38 17.43 L 23.38 15.64 Z" fill="none" stroke="rgb(0, 0, 0)" stroke-width="1.3" stroke-linejoin="round" stroke-miterlimit="10" pointer-events="all"></path></g></g><g></g><g></g></g></svg></a><br><a class="geToolbarButton" title="Freehand" disabled="disabled" style="display: inline-block; box-sizing: border-box; height: 30px; padding: 6px; position: relative; vertical-align: top; top: 0px; border-style: none; box-shadow: none; margin: 2px 0px; background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjRweCIgZmlsbD0iIzAwMDAwMCI+PHJlY3QgZmlsbD0ibm9uZSIgaGVpZ2h0PSIyNCIgd2lkdGg9IjI0Ii8+PHBhdGggZD0iTTQuNSw4YzEuMDQsMCwyLjM0LTEuNSw0LjI1LTEuNWMxLjUyLDAsMi43NSwxLjIzLDIuNzUsMi43NWMwLDIuMDQtMS45OSwzLjE1LTMuOTEsNC4yMkM1LjQyLDE0LjY3LDQsMTUuNTcsNCwxNyBjMCwxLjEsMC45LDIsMiwydjJjLTIuMjEsMC00LTEuNzktNC00YzAtMi43MSwyLjU2LTQuMTQsNC42Mi01LjI4YzEuNDItMC43OSwyLjg4LTEuNiwyLjg4LTIuNDdjMC0wLjQxLTAuMzQtMC43NS0wLjc1LTAuNzUgQzcuNSw4LjUsNi4yNSwxMCw0LjUsMTBDMy4xMiwxMCwyLDguODgsMiw3LjVDMiw1LjQ1LDQuMTcsMi44Myw1LDJsMS40MSwxLjQxQzUuNDEsNC40Miw0LDYuNDMsNCw3LjVDNCw3Ljc4LDQuMjIsOCw0LjUsOHogTTgsMjEgbDMuNzUsMGw4LjA2LTguMDZsLTMuNzUtMy43NUw4LDE3LjI1TDgsMjF6IE0xMCwxOC4wOGw2LjA2LTYuMDZsMC45MiwwLjkyTDEwLjkyLDE5TDEwLDE5TDEwLDE4LjA4eiBNMjAuMzcsNi4yOSBjLTAuMzktMC4zOS0xLjAyLTAuMzktMS40MSwwbC0xLjgzLDEuODNsMy43NSwzLjc1bDEuODMtMS44M2MwLjM5LTAuMzksMC4zOS0xLjAyLDAtMS40MUwyMC4zNyw2LjI5eiIvPjwvc3ZnPg==&quot;); background-position: center center; background-repeat: no-repeat; background-size: 24px 24px; width: 40px; cursor: pointer; opacity: 0.7;"></a><br><a class="geToolbarButton" title="Shapes (Cmd+Shift+K)" style="display: inline-block; box-sizing: border-box; height: 30px; padding: 6px; position: relative; vertical-align: top; top: 0px; border-style: none; box-shadow: none; margin: 2px 0px; background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjI0cHgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0cHgiIGZpbGw9IiMwMDAwMDAiPjxnPjxwYXRoIGQ9Ik0wLDBoMjR2MjRIMFYweiIgZmlsbD0ibm9uZSIvPjwvZz48Zz48Zz48cGF0aCBkPSJNMywxMWg4VjNIM1YxMXogTTUsNWg0djRINVY1eiIvPjxwYXRoIGQ9Ik0xMywzdjhoOFYzSDEzeiBNMTksOWgtNFY1aDRWOXoiLz48cGF0aCBkPSJNMywyMWg4di04SDNWMjF6IE01LDE1aDR2NEg1VjE1eiIvPjxwb2x5Z29uIHBvaW50cz0iMTgsMTMgMTYsMTMgMTYsMTYgMTMsMTYgMTMsMTggMTYsMTggMTYsMjEgMTgsMjEgMTgsMTggMjEsMTggMjEsMTYgMTgsMTYiLz48L2c+PC9nPjwvc3ZnPg==&quot;); background-position: center center; background-repeat: no-repeat; background-size: 24px 24px; width: 40px; cursor: pointer; opacity: 0.7;"></a><br><a class="geToolbarButton" title="Table" style="display: inline-block; box-sizing: border-box; top: 6px; margin: 2px 0px; height: 30px; padding: 6px; cursor: pointer; background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjI0cHgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0cHgiIGZpbGw9IiMwMDAwMDAiPjxnPjxwYXRoIGQ9Ik0wLDBoMjR2MjRIMFYweiIgZmlsbD0ibm9uZSIvPjwvZz48Zz48cGF0aCBkPSJNMjAsNEg0QzIuOSw0LDIsNC45LDIsNnYxMmMwLDEuMSwwLjksMiwyLDJoMTZjMS4xLDAsMi0wLjksMi0yVjZDMjIsNC45LDIxLjEsNCwyMCw0eiBNOCwxMUg0VjZoNFYxMXogTTE0LDExaC00VjZoNFYxMXogTTIwLDExaC00VjZoNFYxMXogTTgsMThINHYtNWg0VjE4eiBNMTQsMThoLTR2LTVoNFYxOHogTTIwLDE4aC00di01aDRWMTh6Ii8+PC9nPjwvc3ZnPg==&quot;); background-position: center center; background-repeat: no-repeat; background-size: 24px 24px; width: 37px; box-shadow: none; opacity: 0.7;"></a><br><a class="geMenuItem mxDisabled" title="Insert" style="display: inline-block; box-sizing: border-box; top: 6px; margin: 2px 0px; height: 30px; padding: 6px; cursor: pointer; background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTkgMTNoLTZ2NmgtMnYtNkg1di0yaDZWNWgydjZoNnYyeiIvPjwvc3ZnPg==&quot;); background-position: center center; background-repeat: no-repeat; background-size: 24px 24px; width: 37px; box-shadow: none; opacity: 0.7;"></a><br><a class="geMenuItem" title="Minimize" style="padding: 0px; box-shadow: none; display: inline-block; width: 40px; height: 12px; margin-bottom: -2px; background-image: url(&quot;data:image/svg+xml;base64,PCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSIxNHB4IiBoZWlnaHQ9IjEwcHgiIHZlcnNpb249IjEuMSI+PHBhdGggZD0iTSAzIDMgTCA3IDcgTCAxMSAzIiBzdHJva2U9IiNDMEMwQzAiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==&quot;); background-position: center top; background-repeat: no-repeat;"></a></div><div class="geToolbarContainer" style="position: absolute; right: 14px; top: 10px; height: 30px; z-index: 1; border-radius: 4px; box-shadow: rgb(209, 209, 209) 0px 0px 3px 1px; padding: 6px 0px 6px 6px; border-bottom: 1px solid lightgray; text-align: right; white-space: nowrap; overflow: hidden; user-select: none;"><a class="geItem geStatus" style="margin: 0px; color: gray; cursor: default; display: inline-block; padding: 6px 0px; text-overflow: ellipsis;"></a><div style="right: 0px; padding-right: 4px; top: 10px; white-space: nowrap; padding-top: 4px; background-color: inherit; display: inline-block; margin-top: -2px;"></div></div><div class="geDiagramContainer" tabindex="0" style="inset: 2px 0px 0px; border: none; cursor: default; overflow: auto; visibility: hidden;"><svg style="left: 0px; top: 0px; width: 100%; height: 100%; display: block; min-width: 400px; min-height: 400px; position: absolute; background-color: rgb(255, 255, 255); background-image: none;"><defs><filter id="dropShadow"><fegaussianblur in="SourceAlpha" stdDeviation="1.2" result="blur"></fegaussianblur><feoffset in="blur" dx="0.6" dy="0.6" result="offsetBlur"></feoffset><feflood flood-color="#3D4574" flood-opacity="0.4" result="offsetColor"></feflood><fecomposite in="offsetColor" in2="offsetBlur" operator="in" result="offsetBlur"></fecomposite><feblend in="SourceGraphic" in2="offsetBlur"></feblend></filter></defs><g><g></g><g></g><g></g><g></g></g></svg></div></div></body></html>

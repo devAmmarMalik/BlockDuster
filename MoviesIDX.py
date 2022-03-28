@@ -20,12 +20,12 @@ class Movies() :
         self.movieFileData = []
         self.idxFile = []
         self.idxDict = {
-            "movieName":"",
+            "MovieName":"",
             "RecNo":"",
-            "movieID":""
+            "MovieID":""
         }
 
-    # Update indexes on customers json. Filename will be supplied 
+    # Update indexes on Movies json. Filename will be supplied 
     def updateIndex(self):
         try:
             # read file into variable which was initialized in this class
@@ -35,9 +35,9 @@ class Movies() :
             # now iterate through the data table, and update the index file
             recCounter = 0
             for cust in self.movieFileData:
-                self.idxDict["movieName"] = cust["movieName"]
+                self.idxDict["MovieName"] = cust["MovieName"]
                 self.idxDict['RecNo'] = str(recCounter)
-                self.idxDict["movieID"] = cust["movieID"]
+                self.idxDict["MovieID"] = cust["MovieID"]
                 self.idxFile.append(self.idxDict.copy())
                 recCounter+=1
 
@@ -64,17 +64,17 @@ class Movies() :
                 # now iterate through the data table, and update the index file
                 recCounter = 0
                 for custSearch in self.movieFileData:
-                    if custSearch["movieName"].upper() == movieName.upper():
+                    if custSearch["MovieName"].upper() == movieName.upper():
                         recNumber = custSearch["RecNo"]
-                        movieID = custSearch["customerID"]
+                        movieID = custSearch["MovieID"]
             else:
-                print("Index file not found to search for the customer")
+                print("Index file not found to search for the Movies")
         except IOError as e:
             print(e)
         return recNumber,movieID
 
-    # Search a name in the index file then send back one row for the customer found
-    def searchCustomer(self, movieName, movieJSONFile):
+    # Search a name in the index file then send back one row for the movie found
+    def searchMovie(self, movieName, movieJSONFile):
         from os.path import exists
         recNumber = -1
         movieID = "0"
@@ -87,18 +87,47 @@ class Movies() :
                 # now iterate through the data table, and update the index file
                 recCounter = 0
                 for custSearch in self.movieFileData:
-                    if custSearch["movieName"].upper() == movieName.upper():
+                    if custSearch["MovieName"].upper() == movieName.upper():
                         recNumber = int(custSearch["RecNo"])
-                        movieID = custSearch["movieID"]
+                        movieID = custSearch["MovieID"]
 
-                # Now search for the record number in the Customer file and return it
+                # Now search for the record number in the Movies file and return it
                 with open(movieJSONFile, "r") as movieFile :
                     movieJSON = json.load(movieFile)
                 
                 if recNumber >= 0 :
                     movieInfo = movieJSON[recNumber].copy()
             else:
-                print("Index file or customer file not found to search for the customer")
+                print("Index file or movie file not found to search for the movie")
+        except IOError as e:
+            print(e)
+        return movieInfo, recNumber, movieID 
+
+    # Search a name in the index file then send back one row for the movie found
+    def searchMovieByID(self, movieID, movieJSONFile):
+        from os.path import exists
+        recNumber = -1
+        movieInfo = []
+        try:
+            if exists("idxMovies.json") and exists(movieJSONFile) :
+                with open("idxMovies.json", "r") as movieFile :
+                    self.movieFileData = json.load(movieFile)
+                
+                # now iterate through the data table, and update the index file
+                recCounter = 0
+                for custSearch in self.movieFileData:
+                    if custSearch["MovieID"] == movieID:
+                        recNumber = int(custSearch["RecNo"])
+                        movieID = custSearch["MovieID"]
+
+                # Now search for the record number in the Movies file and return it
+                with open(movieJSONFile, "r") as movieFile :
+                    movieJSON = json.load(movieFile)
+                
+                if recNumber >= 0 :
+                    movieInfo = movieJSON[recNumber].copy()
+            else:
+                print("Index file or movie file not found to search for the movie")
         except IOError as e:
             print(e)
         return movieInfo, recNumber, movieID 
