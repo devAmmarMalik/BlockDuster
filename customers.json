@@ -168,14 +168,6 @@
   "customerPhone": "6065051111"
  },
  {
-  "customerID": "22",
-  "customerName": "Akshaya Ramakrishna",
-  "customerAddress": "7 blossom circle",
-  "customerCity": "Windsor",
-  "customerState": "NJ",
-  "customerPhone": "3211001000"
- },
- {
   "customerID": "23",
   "customerName": "Tim O.",
   "customerAddress": "101 smarty way",
@@ -190,5 +182,29 @@
   "customerCity": "NYC",
   "customerState": "NY",
   "customerPhone": "9001231234"
+ },
+ {
+  "customerID": "25",
+  "customerName": "Ricardo",
+  "customerAddress": "10 calm st",
+  "customerCity": "Chicago",
+  "customerState": "IL",
+  "customerPhone": "3211230001"
+ },
+ {
+  "customerID": "26",
+  "customerName": "Tom Hanks",
+  "customerAddress": "100 funny ave",
+  "customerCity": "Los Angeles",
+  "customerState": "CA",
+  "customerPhone": "6665557777"
+ },
+ {
+  "customerID": "28",
+  "customerName": "Murphy",
+  "customerAddress": "100 main st",
+  "customerCity": "Trenton",
+  "customerState": "NJ",
+  "customerPhone": "1112221000"
  }
 ]

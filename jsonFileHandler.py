@@ -6,9 +6,10 @@ def readJsonFile(filename) :
     try:
         with open(filename) as json_file :
             data = json.load(json_file)
+            return data
     except IOError:
         print("Error reading JSON file")
-    return data
+    
 
 
 # function to add new data record  to jason file
@@ -19,22 +20,24 @@ def editJsonFile(editCust, newdata, filename) :
     # gets the number of records
     lendata = len(data)
     
+    print(newdata)
     #parsing the records in data 
 
     for i in range(0,lendata):
         #  assigning new values to data if given for customerName, address, city, state
         if data[i]['customerName'] == editCust :
+            
             if newdata['customerAddress'] != "":
                  data[i]['customerAddress'] = newdata['customerAddress']
-                 
             elif newdata['customerCity'] != "" :
-                 data[i]['customerCity'] = newdata['customerCity']
-                 
+                 data[i]['customerCity'] = newdata['customerCity']     
             elif newdata['customerState'] != "" :
                 data[i]['customerState'] = newdata['customerState']
-                
             elif newdata['customerPhone'] != "" :
                 data[i]['customerPhone'] = newdata['customerPhone'] 
+            elif newdata['customerName'] != "":
+                data[i]['customerName'] = newdata['customerName']
+            
                 
             # opening json file and writing edited data back  
             with open(filename, "w") as json_file :

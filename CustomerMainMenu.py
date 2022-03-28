@@ -1,3 +1,5 @@
+
+
 # Python 3
 # coding: utf-8
 __author__ = "Per-Scholas Cohort-5"
@@ -8,7 +10,10 @@ __version__ = "1.0.1"
 __maintainer__ = "all creditors/github"
 __email__ = "dev.malik.ammar@gmail.com"
 __status__ = "Production"
+
 import os, BlockDusterColors
+import customersDataManMod
+
 
 def MainMenu() :
     os.system('clear')  # Clear the terminal before starting the program so everything is clear
@@ -37,22 +42,36 @@ def MainMenu() :
     ''')
 
     print(''' 
-    ################################################################
-    #   CUSTOMER MENU - Choose one of the options from below       #
-    ----------------------------------------------------------------
-    #    1-Add New | 2-Edit A Customer | 3-Delete | 4-Main Menu    #         
-    ################################################################
+    #####################################################################################
+    #            CUSTOMER MENU - Choose one of the options from below                   #
+    -------------------------------------------------------------------------------------
+    #    0-Display Customers | 1-Add New | 2-Edit A Customer | 3-Delete | 4-Main Menu   #         
+    #####################################################################################
     ''')
     selection = 0
     while selection != "4" :
         selection=input(BlockDusterColors.colorFormat.CBLUE + "     Customer selection.......:" + BlockDusterColors.colorFormat.ENDC)
+        if selection == '0' :
+            customersDataManMod.displayCustomers()
+            input()
+            return 0
         if selection == '1' :
-            print("Add a customer")
+            customersDataManMod.addCustomers()
+            input()
+            return 0
         elif selection == '2' :
-            print("Edit a customer")
+            customersDataManMod.editCustomers()
+            input()
+            return 0
         elif selection == '3' :
-            print("Delete a customer")
+            customersDataManMod.delCustomers()
+            input()
+            return 0
         elif selection == '4' :
-            os.system('clear')
+            #try:
+            #    os.system('clear')
+            #except :
+            os.system('cls')
+            return 1
         else :
-            print("invalid option")
+            print("invalid option")            
