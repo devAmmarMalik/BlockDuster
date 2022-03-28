@@ -49,22 +49,24 @@ def MainMenu() :
     ''')
 
     print(''' 
-    ################################################################
-    #   Movies Library - Choose one of the options from below      #
-    ----------------------------------------------------------------
-    #    1-Add New | 2-Edit A Movie | 3-Delete | 4-Main Menu       #         
-    ################################################################
+    ##################################################################################
+    #    Movies Library - Choose one of the options from below                        #
+    ----------------------------------------------------------------------------------
+    #    1-Movie List | 2-Add Movie | 3-Edit Movie | 4-Delete Movie | 5-Main Menu    #         
+    ##################################################################################
     ''')
     selection = 0
-    while selection != "4" :
+    while selection != "5" :
         selection=input(BlockDusterColors.colorFormat.CBLUE + "     Movies Library selection.......:" + BlockDusterColors.colorFormat.ENDC)
         if selection == '1' :
-            print("Add a customer")
+            print("Movie List")
         elif selection == '2' :
-            print("Edit a customer")
+            print("Add Movie")
         elif selection == '3' :
-            print("Delete a customer")
+            print("Edit Movie")
         elif selection == '4' :
+            print("Delete Movie")
+        elif selection == '5' :
             os.system('clear')
         else :
             print("invalid option")
