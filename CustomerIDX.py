@@ -104,3 +104,33 @@ class Customer() :
         except IOError as e:
             print(e)
         return customerInfo, recNumber, customerID 
+
+
+    # Search a customer ID in the index file then send back one row for the customer found
+    def searchCustomerByID(self, customerID, customerJSONFile):
+        from os.path import exists
+        recNumber = -1
+        customerInfo = []
+        try:
+            if exists("idxCustomer.json") and exists(customerJSONFile) :
+                with open("idxCustomer.json", "r") as customerFile :
+                    self.customerFileData = json.load(customerFile)
+                
+                # now iterate through the data table, and update the index file
+                recCounter = 0
+                for custSearch in self.customerFileData:
+                    if custSearch["customerID"] == customerID:
+                        recNumber = int(custSearch["RecNo"])
+                        customerID = custSearch["customerID"]
+
+                # Now search for the record number in the Customer file and return it
+                with open(customerJSONFile, "r") as customerFile :
+                    customerJSON = json.load(customerFile)
+                
+                if recNumber >= 0 :
+                    customerInfo = customerJSON[recNumber].copy()
+            else:
+                print("Index file or customer file not found to search for the customer")
+        except IOError as e:
+            print(e)
+        return customerInfo, recNumber, customerID 

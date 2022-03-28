@@ -1,27 +1,27 @@
 [
     {
-      "Movie ID": 1,
-      "Movie Name": "007",
-      "Movie Genre": "Action"
+      "MovieID": "1",
+      "MovieName": "007",
+      "MovieGenre": "Action"
     },  
     {
-      "Movie ID": 2,
-      "Movie Name": "Marley and Me",
-      "Movie Genre": "Comedy"
+      "MovieID": "2",
+      "MovieName": "Marley and Me",
+      "MovieGenre": "Comedy"
     },  
     {
-      "Movie ID": 3,
-      "Movie Name": "Titanic",
-      "Movie Genre": "Romance"
+      "MovieID": "3",
+      "MovieName": "Titanic",
+      "MovieGenre": "Romance"
     },
     {
-      "Movie ID": 4,
-      "Movie Name": "The Batman",
-      "Movie Genre": "Action"
+      "MovieID": "4",
+      "MovieName": "The Batman",
+      "MovieGenre": "Action"
     },
     {
-      "Movie ID": 5,
-      "Movie Name": "The Kashmir Files",
-      "Movie Genre": "History"
+      "MovieID": "5",
+      "MovieName": "The Kashmir Files",
+      "MovieGenre": "History"
     }
 ]
