@@ -1,9 +1,7 @@
+# include standard project header
+
 import json 
 
-# from tkinter.messagebox import YES, YESNOCANCEL
- 
-# #Opening a json file and printing customer information
-# filename=r"C:\Users\rupma\Documents\BlockDuster\Movie\all_Movies.json"
 filename="all_Movies.json"
 movieJsonFile = ""
 
