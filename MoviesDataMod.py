@@ -14,31 +14,38 @@ import json, jsonFileHandler
 
 
 # reading from json file and populating data object
-data = jsonFileHandler.readJsonFile('movies.json')
-fileName = 'movies.json'
+movieData = jsonFileHandler.readJsonFile('movies.json')
 
 # initializing var to calculate last movie id
-lastMovieID = len(data)
+lastMovieID = len(movieData)
+
      
-def write_json(newMovie,fileName):
+def write_json(new_data, fileName = 'movies.json'):
 
     try:
-        with open(fileName, "w") as json_file:
-            data.append(newMovie)
-            print(json.dump(data, json_file, indent=1))
+        with open (fileName, 'r+') as file:
+                with open(filename, "w") as json_file:
+        data.append(newdata)  # appending data list read from json file with new record
+        print(json.dump(data, json_file, indent=1))
+            except IOError:
+        print("Error reading JSON file")
 
+    return
 
 def addMovieRecord():
-    newmovieID = (lastMovieID+1)
-    # print("Last MovieID: ", str(lastMovieID) )
-    movieTitle = input('New Movie Name?: ')
-    movieGenre = input('New Movie Genre?: ')
+        movieID = (lastMovieID+1)
+        print("Last MovieID: ", str(lastMovieID) )
+        movieTitle = input('New Movie Name?: ')
+        movieGenre = input('New Movie Genre?: ')
 
-    newMovie = {    "MovieID": newmovieID,
-                    "MovieName": movieTitle, 
-                    "MovieGenre": movieGenre 
-                }
+        newMovie = {    "MovieID": movieID,
+                        "MovieName": movieTitle, 
+                        "MovieGenre": movieGenre 
+                    }
+        print (newMovie)
+    
+        write_json(newMovie)
+    return
 
-    write_json(newMovie)
 
-
+addMovieRecord()
