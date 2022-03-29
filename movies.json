@@ -25,27 +25,27 @@
   "MovieGenre": "History"
  },
  {
-  "MovieID": 6,
+  "MovieID": "6",
   "MovieName": "hold on",
   "MovieGenre": "last"
  },
  {
-  "MovieID": 7,
+  "MovieID": "7",
   "MovieName": "ungradde",
   "MovieGenre": "comedy"
  },
  {
-  "MovieID": 8,
+  "MovieID": "8",
   "MovieName": "/usr/local/bin/python3 /Users/kisasi/Documents/AWS/BlockDuster/BlockDuster/MoviesDataMod.py",
   "MovieGenre": "another"
  },
  {
-  "MovieID": "{movieID}",
+  "MovieID": "9",
   "MovieName": "no country for old coders",
   "MovieGenre": "tech"
  },
  {
-  "MovieID": "{movieID}",
+  "MovieID": "10",
   "MovieName": "Artificial Intelligence",
   "MovieGenre": "scifi"
  },

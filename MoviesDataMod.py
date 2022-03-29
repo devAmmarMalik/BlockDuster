@@ -53,22 +53,24 @@ def delMovieRecord():
         # get movieID to be deleted 
         #   > search for movieID from movieList 
         #   > if/else based on search results 
-        #   > confirm movieID deletion 
+        #   > confirm movieID deletion
+        #   > execute movieID entry from json file 
         #   > repeat until exit to Main menu
 
         # get movieID 
         findMovieID = input('Find Movie ID?: ')
-        
         print(findMovieID)
 
         # find movieID
-        newMovieList = {    "MovieID": movieID,
-                        "MovieName": movieTitle, 
-                        "MovieGenre": movieGenre 
-                    }
-        print (newMovie)
-    
-        write_json(newMovie)
+        while i != findMovieID:
+            if i == movieData[i]:
+                print(movieData['MovieName'])
+            elif i < findMovieID:
+                i = i + 1
+            else:
+                print("Did not find movie in inventory.")    
+        #
+        # write_json(newMovie)
 
 
 addMovieRecord()
