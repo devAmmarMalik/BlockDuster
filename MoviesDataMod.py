@@ -11,7 +11,7 @@ __status__ = "Production"
 from fileinput import filename
 from hashlib import new
 import os, BlockDusterColors
-import json, jsonFileHandler
+import json, jsonFileHandler, ast
 
 
 # reading from json file and populating data object
@@ -19,6 +19,12 @@ movieData = jsonFileHandler.readJsonFile('movies.json')
 
 # initializing var to calculate last movie id
 lastMovieID = len(movieData)
+
+# list to dictionary
+def convertToDict(a):
+    it = iter(a)
+    res_dct = dict(zip(it, it))
+    return res_dct
 
      
 def write_json(newMovie, fileName = 'movies.json'):
@@ -59,18 +65,29 @@ def delMovieRecord():
 
         # get movieID 
         findMovieID = input('Find Movie ID?: ')
-        print(findMovieID)
+        print("data Type: ",type(findMovieID), " ", findMovieID)
 
-        # find movieID
-        while i != findMovieID:
-            if i == movieData[i]:
-                print(movieData['MovieName'])
-            elif i < findMovieID:
-                i = i + 1
-            else:
-                print("Did not find movie in inventory.")    
-        #
+        # Python3 program to Convert a
+        # list to dictionary
+        
+
+        print(type(movieData)," ", movieData)
+
+        # newDict = ast.literal_eval(movieData)
+        # print("converted dictionary: "+ str(newDict))
+        # # find movieID
+
+
+        # i = 0
+        # for i in movieData:
+        #     if findMovieID == movieData[i]:
+        #         print(movieData['MovieName'])
+        #     elif i < findMovieID:
+        #         i = i + 1
+        #     else:
+        #         print("Did not find movie in inventory.")    
+        # #
         # write_json(newMovie)
 
 
-addMovieRecord()
+delMovieRecord()
