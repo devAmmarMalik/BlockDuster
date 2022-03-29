@@ -1,27 +1,57 @@
 [
-    {
-      "MovieID": "1",
-      "MovieName": "007",
-      "MovieGenre": "Action"
-    },  
-    {
-      "MovieID": "2",
-      "MovieName": "Marley and Me",
-      "MovieGenre": "Comedy"
-    },  
-    {
-      "MovieID": "3",
-      "MovieName": "Titanic",
-      "MovieGenre": "Romance"
-    },
-    {
-      "MovieID": "4",
-      "MovieName": "The Batman",
-      "MovieGenre": "Action"
-    },
-    {
-      "MovieID": "5",
-      "MovieName": "The Kashmir Files",
-      "MovieGenre": "History"
-    }
+ {
+  "MovieID": "1",
+  "MovieName": "007",
+  "MovieGenre": "Action"
+ },
+ {
+  "MovieID": "2",
+  "MovieName": "Marley and Me",
+  "MovieGenre": "Comedy"
+ },
+ {
+  "MovieID": "3",
+  "MovieName": "Titanic",
+  "MovieGenre": "Romance"
+ },
+ {
+  "MovieID": "4",
+  "MovieName": "The Batman",
+  "MovieGenre": "Action"
+ },
+ {
+  "MovieID": "5",
+  "MovieName": "The Kashmir Files",
+  "MovieGenre": "History"
+ },
+ {
+  "MovieID": 6,
+  "MovieName": "hold on",
+  "MovieGenre": "last"
+ },
+ {
+  "MovieID": 7,
+  "MovieName": "ungradde",
+  "MovieGenre": "comedy"
+ },
+ {
+  "MovieID": 8,
+  "MovieName": "/usr/local/bin/python3 /Users/kisasi/Documents/AWS/BlockDuster/BlockDuster/MoviesDataMod.py",
+  "MovieGenre": "another"
+ },
+ {
+  "MovieID": "{movieID}",
+  "MovieName": "no country for old coders",
+  "MovieGenre": "tech"
+ },
+ {
+  "MovieID": "{movieID}",
+  "MovieName": "Artificial Intelligence",
+  "MovieGenre": "scifi"
+ },
+ {
+  "MovieID": "11",
+  "MovieName": "test",
+  "MovieGenre": "test"
+ }
 ]

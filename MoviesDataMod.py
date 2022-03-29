@@ -8,6 +8,7 @@ __version__ = "1.0.1"
 __maintainer__ = "all creditors/github"
 __email__ = "dev.malik.ammar@gmail.com"
 __status__ = "Production"
+from fileinput import filename
 from hashlib import new
 import os, BlockDusterColors
 import json, jsonFileHandler
@@ -20,21 +21,23 @@ movieData = jsonFileHandler.readJsonFile('movies.json')
 lastMovieID = len(movieData)
 
      
-def write_json(new_data, fileName = 'movies.json'):
+def write_json(newMovie, fileName = 'movies.json'):
 
     try:
-        with open (fileName, 'r+') as file:
-                with open(filename, "w") as json_file:
-        data.append(newdata)  # appending data list read from json file with new record
-        print(json.dump(data, json_file, indent=1))
-            except IOError:
-        print("Error reading JSON file")
-
+        with open (fileName, 'w') as file:
+            movieData.append(newMovie)
+            print(json.dump(movieData, file, indent=1))
+    except IOError:
+            print("Error reading JSON file")
     return
+    
 
 def addMovieRecord():
-        movieID = (lastMovieID+1)
-        print("Last MovieID: ", str(lastMovieID) )
+
+        # set new movie record ID by incrementing lastMovieID by 1
+        # and convert to a string for dictionary compatibility
+        movieID = str(lastMovieID+1)
+        print("New MovieID: ", movieID )
         movieTitle = input('New Movie Name?: ')
         movieGenre = input('New Movie Genre?: ')
 
@@ -45,7 +48,27 @@ def addMovieRecord():
         print (newMovie)
     
         write_json(newMovie)
-    return
+
+def delMovieRecord():
+        # get movieID to be deleted 
+        #   > search for movieID from movieList 
+        #   > if/else based on search results 
+        #   > confirm movieID deletion 
+        #   > repeat until exit to Main menu
+
+        # get movieID 
+        findMovieID = input('Find Movie ID?: ')
+        
+        print(findMovieID)
+
+        # find movieID
+        newMovieList = {    "MovieID": movieID,
+                        "MovieName": movieTitle, 
+                        "MovieGenre": movieGenre 
+                    }
+        print (newMovie)
+    
+        write_json(newMovie)
 
 
 addMovieRecord()
