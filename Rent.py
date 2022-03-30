@@ -31,7 +31,7 @@ def getCustomer():
     customerID = 0
     objCustomer = CustomerIDX.Customer("customers.json")
     cCustomerName = input("     Customer name to rent : ")
-    showCustomer, recNumber, customerID = objCustomer.searchCustomer(cCustomerName, "customers.json")
+    showCustomer, recNumber, customerID = objCustomer.searchCustomer(cCustomerName)
     if len(showCustomer) > 0 :
         print(BlockDusterColors.colorFormat.CGREY +
               " Customer Name : ", showCustomer["customerName"])

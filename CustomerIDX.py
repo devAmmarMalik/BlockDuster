@@ -54,7 +54,7 @@ class Customer() :
     # Search a name in the index file
     def search(self, customerName):
         from os.path import exists
-        recNumber = "0"
+        recNumber = "-1"
         customerID = "0"
         try:
             if exists("idxCustomer.json"):

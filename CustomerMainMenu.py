@@ -12,16 +12,20 @@ __email__ = "dev.malik.ammar@gmail.com"
 __status__ = "Production"
 
 import os, BlockDusterColors
+from re import L
 import customersDataManMod
-
+import Library
 
 def MainMenu() :
-    os.system('clear')  # Clear the terminal before starting the program so everything is clear
-    print('''        )
+    # Clear the terminal before starting the program so everything is clear
+    Library.clearTerminal()
+
+    print('''       
+          )
         (  (              .^.
-            \) )           .'.^.'.
-            (/          .'.'---'.'.
-            _\)_       .'.'-------'.'.
+         \) )           .'.^.'.
+          (/          .'.'---'.'.
+         _\)_       .'.'-------'.'.
         (__)()    .'.'-,=======.-'.'.
         (_)__)  .'.'---|   |   |---'.'.
         (__)_),'.'-----|   |   |-----'.'.
@@ -42,17 +46,17 @@ def MainMenu() :
     ''')
 
     print(''' 
-    #####################################################################################
-    #            CUSTOMER MENU - Choose one of the options from below                   #
-    -------------------------------------------------------------------------------------
-    #    0-Display Customers | 1-Add New | 2-Edit A Customer | 3-Delete | 4-Main Menu   #         
-    #####################################################################################
+    ###########################################################################
+    #           CUSTOMER MENU - Choose one of the options from below          #
+    ---------------------------------------------------------------------------
+    #    0-Search | 1-Add New | 2-Edit A Customer | 3-Delete | 4-Main Menu    #         
+    ###########################################################################
     ''')
     selection = 0
     while selection != "4" :
-        selection=input(BlockDusterColors.colorFormat.CBLUE + "     Customer selection.......:" + BlockDusterColors.colorFormat.ENDC)
+        selection=input(BlockDusterColors.colorFormat.CBLUE + "     Customer selection.......: " + BlockDusterColors.colorFormat.ENDC)
         if selection == '0' :
-            customersDataManMod.displayCustomers()
+            customersDataManMod.searchCustomers()
             input()
             return 0
         if selection == '1' :
@@ -68,10 +72,7 @@ def MainMenu() :
             input()
             return 0
         elif selection == '4' :
-            #try:
-            #    os.system('clear')
-            #except :
-            os.system('cls')
+            Library.clearTerminal()
             return 1
         else :
-            print("invalid option")            
+            print("\nWarning - Invalid option\n")            

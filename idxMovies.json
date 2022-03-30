@@ -23,5 +23,35 @@
   "MovieName": "The Kashmir Files",
   "RecNo": "4",
   "MovieID": "5"
+ },
+ {
+  "MovieName": "hold on",
+  "RecNo": "5",
+  "MovieID": "6"
+ },
+ {
+  "MovieName": "ungradde",
+  "RecNo": "6",
+  "MovieID": "7"
+ },
+ {
+  "MovieName": "/usr/local/bin/python3 /Users/kisasi/Documents/AWS/BlockDuster/BlockDuster/MoviesDataMod.py",
+  "RecNo": "7",
+  "MovieID": "8"
+ },
+ {
+  "MovieName": "no country for old coders",
+  "RecNo": "8",
+  "MovieID": "9"
+ },
+ {
+  "MovieName": "Artificial Intelligence",
+  "RecNo": "9",
+  "MovieID": "10"
+ },
+ {
+  "MovieName": "test",
+  "RecNo": "10",
+  "MovieID": "11"
  }
 ]
