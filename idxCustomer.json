@@ -55,63 +55,53 @@
   "customerID": "15"
  },
  {
-  "customerName": "Zee",
-  "RecNo": "11",
-  "customerID": "16"
- },
- {
   "customerName": "Rupa Sinha",
-  "RecNo": "12",
+  "RecNo": "11",
   "customerID": "17"
  },
  {
   "customerName": "Nosa",
-  "RecNo": "13",
+  "RecNo": "12",
   "customerID": "18"
  },
  {
   "customerName": "Anju",
-  "RecNo": "14",
+  "RecNo": "13",
   "customerID": "19"
  },
  {
-  "customerName": "Ammar",
-  "RecNo": "15",
-  "customerID": "20"
- },
- {
   "customerName": "Bakal",
-  "RecNo": "16",
+  "RecNo": "14",
   "customerID": "21"
  },
  {
   "customerName": "Tim",
-  "RecNo": "17",
+  "RecNo": "15",
   "customerID": "23"
  },
  {
   "customerName": "Shafan",
-  "RecNo": "18",
+  "RecNo": "16",
   "customerID": "24"
  },
  {
   "customerName": "Ricardo",
-  "RecNo": "19",
+  "RecNo": "17",
   "customerID": "25"
  },
  {
   "customerName": "Tom Hanks",
-  "RecNo": "20",
+  "RecNo": "18",
   "customerID": "26"
  },
  {
   "customerName": "Manny",
-  "RecNo": "21",
+  "RecNo": "19",
   "customerID": "27"
  },
  {
   "customerName": "Geetha",
-  "RecNo": "22",
+  "RecNo": "20",
   "customerID": "28"
  }
 ]

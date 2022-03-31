@@ -60,18 +60,21 @@ def RentalHistory(customerFileName, moviesFileName, filename):
     for outStanding in moviesFileData:
         ## Get customer information from customers json 
         customerInfo, recNo, custID = oCustmers.searchCustomerByID(outStanding["CustomerID"], "Customers.json")
-        RentalHistoryDict["Customer"] = customerInfo["customerName"]
-        RentalHistoryDict["CustomerPhone"] = customerInfo["customerPhone"]
+        if recNo >= 0 :
+            RentalHistoryDict["Customer"] = customerInfo["customerName"]
+            RentalHistoryDict["CustomerPhone"] = customerInfo["customerPhone"]
 
         ## Get movie name from the movies informaiton
         movieInfo, movieRecNo, movID = oMovies.searchMovieByID(outStanding["VideoID"],"Movies.json")
-        RentalHistoryDict["Movie"] = movieInfo["MovieName"]
+        if movieRecNo >= 0:
+            RentalHistoryDict["Movie"] = movieInfo["MovieName"]
 
         ## Now get the issue date and if there, return date
         RentalHistoryDict["IssueDate"] = outStanding["IssueDate"]
         RentalHistoryDict["ReturnDate"] = outStanding["ReturnDate"]
 
-        RentalHistory.append(RentalHistoryDict.copy())
+        if recNo >= 0 and movieRecNo >= 0:
+            RentalHistory.append(RentalHistoryDict.copy())
 
     ## Now return the data back
     return RentalHistory

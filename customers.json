@@ -88,14 +88,6 @@
   "customerPhone": "7325556666"
  },
  {
-  "customerID": "16",
-  "customerName": "Zee",
-  "customerAddress": "123 park st",
-  "customerCity": "Hightstown",
-  "customerState": "NJ",
-  "customerPhone": "1231231234"
- },
- {
   "customerID": "17",
   "customerName": "Rupa Sinha",
   "customerAddress": "10 beach way",
@@ -118,14 +110,6 @@
   "customerCity": "San Francisco",
   "customerState": "CA",
   "customerPhone": "5051020304"
- },
- {
-  "customerID": "20",
-  "customerName": "Ammar",
-  "customerAddress": "100 boss ave",
-  "customerCity": "Dallas",
-  "customerState": "TX",
-  "customerPhone": "5566771000"
  },
  {
   "customerID": "21",

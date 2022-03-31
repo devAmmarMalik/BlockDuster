@@ -1,14 +1,26 @@
 [
  {
   "VideoID": "3",
-  "CustomerID": "4",
+  "CustomerID": "6",
   "IssueDate": "03/27/2022",
   "ReturnDate": ""
  },
  {
   "VideoID": "1",
-  "CustomerID": "4",
+  "CustomerID": "7",
   "IssueDate": "03/27/2022",
   "ReturnDate": "03/27/2022"
+ },
+ {
+  "VideoID": "4",
+  "CustomerID": "9",
+  "IssueDate": "03/29/2022",
+  "ReturnDate": "03/29/2022"
+ },
+ {
+  "VideoID": "3",
+  "CustomerID": "9",
+  "IssueDate": "03/30/2022",
+  "ReturnDate": "03/30/2022"
  }
 ]

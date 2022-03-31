@@ -67,8 +67,6 @@ class Customer() :
                     if custSearch["customerName"].upper() == customerName.upper():
                         recNumber = custSearch["RecNo"]
                         customerID = custSearch["customerID"]
-
-                print("Result looks like {}", recNumber)
             else:
                 print("Index file not found to search for the customer")
         except IOError as e:
