@@ -18,6 +18,34 @@ def displayCustomers() :
         print(f" {i['customerPhone']}\n")
      #   lastCustID = int(i['customerID'])  # storing last customer id in variable
 
+    
+def searchCustomers() :
+
+    displayCustomers()
+    custDetails = { 
+                    'customerID' : "",
+                    'customerName' : "",
+                    'customerAddress' : "",
+                    'customerCity' : "",
+                    'customerState' : "",
+                    'customerPhone' : ""
+                    }
+    
+    st = 1
+
+    searchCust = input("Enter search customer name: ")
+    st, custDetails = jsonFileHandler.searchJsonFile(searchCust, "customers.json")
+    
+    if st >= 0:
+        print("\nCUSTOMER found :)")
+        print(f"Customer ID : {custDetails['customerID']}", end = " -->")
+        print(f" {custDetails['customerName']}", end = ", ")
+        print(f"{custDetails['customerAddress']}, {custDetails['customerCity']}, {custDetails['customerState']}", end = " -->")
+        print(f" {custDetails['customerPhone']}\n")
+    else :
+        print(f"\n{searchCust} not found!!")
+
+
 
 def addCustomers() :
     
@@ -40,13 +68,13 @@ def addCustomers() :
     newCust['customerState'] = input("Enter State: ")
     newCust['customerPhone'] = input("Enter phone: ")
 
-    print(newCust)
+    #print(newCust)
 
     # calling funcion to write the new record in json file
-    if jsonFileHandler.writeJsonFile(newCust, "customers.json") :
+    if jsonFileHandler.addJsonFile(newCust, "customers.json") :
         print("Successfully added new customer!!")
     
-    print(newCust['customerID'])
+    #print(newCust['customerID'])
 
         
 def editCustomers() :
@@ -71,7 +99,7 @@ def editCustomers() :
     editCust["customerState"] = input("Enter State (press enter - no changes): ")
     editCust["customerPhone"] = input("Enter new phone (press enter - no changes) : ")
 
-    print(f"cust change : {editCust}")
+    # print(f"cust change : {editCust}")
 
     if not any(editCust.values()):
         print(f"\nNo changes given for {editName}!!!\n")

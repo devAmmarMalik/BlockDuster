@@ -31,7 +31,7 @@ def getCustomer():
     customerID = 0
     objCustomer = CustomerIDX.Customer("customers.json")
     cCustomerName = input("     Customer name to rent : ")
-    showCustomer, recNumber, customerID = objCustomer.searchCustomer(cCustomerName, "customers.json")
+    showCustomer, recNumber, customerID = objCustomer.searchCustomer(cCustomerName, "Customers.json")
     if len(showCustomer) > 0 :
         print(BlockDusterColors.colorFormat.CGREY +
               " Customer Name : ", showCustomer["customerName"])
@@ -61,7 +61,7 @@ def getMovie():
 
 def RentalMainMenu() :
     Library.clearTerminal()  # Clear the terminal before starting the program so everything is clear
-    print(BlockDusterColors.colorFormat.HEADER2)
+    print(BlockDusterColors.colorFormat.HEADER)
     print('''        _
                     ( \\
          __         _)_\_
@@ -132,7 +132,7 @@ def RentalMainMenu() :
 
         elif selection == '3' :
             objCustomer = CustomerIDX.Customer("customers.json")
-            cCustomerName = input("     Customer name to rent : ")
+            cCustomerName = input("     Customer name to return movie : ")
             showCustomer, recNumber, customerID = objCustomer.searchCustomer(cCustomerName, "customers.json")
 
             if int(showCustomer["customerID"]) > -1:

@@ -1,122 +1,107 @@
 [
  {
-  "customerName": "Krish",
-  "RecNo": "0",
-  "customerID": "1"
- },
- {
   "customerName": "John",
-  "RecNo": "1",
+  "RecNo": "0",
   "customerID": "2"
  },
  {
-  "customerName": "Cristie",
-  "RecNo": "2",
+  "customerName": "Cris",
+  "RecNo": "1",
   "customerID": "3"
  },
  {
-  "customerName": "Jen",
-  "RecNo": "3",
-  "customerID": "4"
- },
- {
-  "customerName": "Josh",
-  "RecNo": "4",
-  "customerID": "5"
- },
- {
   "customerName": "Amanda",
-  "RecNo": "5",
+  "RecNo": "2",
   "customerID": "6"
  },
  {
   "customerName": "Sarah",
-  "RecNo": "6",
+  "RecNo": "3",
   "customerID": "7"
  },
  {
   "customerName": "Matt",
-  "RecNo": "7",
+  "RecNo": "4",
   "customerID": "8"
  },
  {
   "customerName": "Amy",
-  "RecNo": "8",
+  "RecNo": "5",
   "customerID": "9"
  },
  {
   "customerName": "Krish",
-  "RecNo": "9",
+  "RecNo": "6",
   "customerID": "10"
  },
  {
   "customerName": "Tom Cruise",
-  "RecNo": "10",
+  "RecNo": "7",
   "customerID": "11"
  },
  {
   "customerName": "Donald Trump",
-  "RecNo": "11",
+  "RecNo": "8",
   "customerID": "12"
  },
  {
   "customerName": "Barack Obama",
-  "RecNo": "12",
+  "RecNo": "9",
   "customerID": "13"
  },
  {
-  "customerName": "Mark Bono",
-  "RecNo": "13",
-  "customerID": "14"
- },
- {
   "customerName": "Joe Biden",
-  "RecNo": "14",
+  "RecNo": "10",
   "customerID": "15"
  },
  {
-  "customerName": "Zee Mee",
-  "RecNo": "15",
-  "customerID": "16"
- },
- {
   "customerName": "Rupa Sinha",
-  "RecNo": "16",
+  "RecNo": "11",
   "customerID": "17"
  },
  {
-  "customerName": "Nosa Okundaye",
-  "RecNo": "17",
+  "customerName": "Nosa",
+  "RecNo": "12",
   "customerID": "18"
  },
  {
-  "customerName": "Anju Gadodia",
-  "RecNo": "18",
+  "customerName": "Anju",
+  "RecNo": "13",
   "customerID": "19"
  },
  {
-  "customerName": "Ammar Malik",
-  "RecNo": "19",
-  "customerID": "20"
- },
- {
-  "customerName": "Bakal G",
-  "RecNo": "20",
+  "customerName": "Bakal",
+  "RecNo": "14",
   "customerID": "21"
  },
  {
-  "customerName": "Akshaya Ramakrishna",
-  "RecNo": "21",
-  "customerID": "22"
- },
- {
-  "customerName": "Tim O.",
-  "RecNo": "22",
+  "customerName": "Tim",
+  "RecNo": "15",
   "customerID": "23"
  },
  {
-  "customerName": "Shafan Sugarman",
-  "RecNo": "23",
+  "customerName": "Shafan",
+  "RecNo": "16",
   "customerID": "24"
+ },
+ {
+  "customerName": "Ricardo",
+  "RecNo": "17",
+  "customerID": "25"
+ },
+ {
+  "customerName": "Tom Hanks",
+  "RecNo": "18",
+  "customerID": "26"
+ },
+ {
+  "customerName": "Manny",
+  "RecNo": "19",
+  "customerID": "27"
+ },
+ {
+  "customerName": "Geetha",
+  "RecNo": "20",
+  "customerID": "28"
  }
 ]

@@ -1,13 +1,5 @@
 [
  {
-  "customerID": "1",
-  "customerName": "Krish",
-  "customerAddress": "1 Main st.",
-  "customerCity": "Holmdel",
-  "customerState": "NJ",
-  "customerPhone": "732-111-1111"
- },
- {
   "customerID": "2",
   "customerName": "John",
   "customerAddress": "2 Birch Drive",
@@ -17,27 +9,11 @@
  },
  {
   "customerID": "3",
-  "customerName": "Cristie",
+  "customerName": "Cris",
   "customerAddress": "21 Garden Road",
   "customerCity": "Plainfield",
-  "customerState": "NJ",
+  "customerState": "TX",
   "customerPhone": "732-222-2222"
- },
- {
-  "customerID": "4",
-  "customerName": "Jen",
-  "customerAddress": "53 Dryer Ct",
-  "customerCity": "Mahwah",
-  "customerState": "NJ",
-  "customerPhone": "732-333-3333"
- },
- {
-  "customerID": "5",
-  "customerName": "Josh",
-  "customerAddress": "67 River Drive",
-  "customerCity": "Jersey customerCity",
-  "customerState": "NJ",
-  "customerPhone": "732-444-4444"
  },
  {
   "customerID": "6",
@@ -104,28 +80,12 @@
   "customerPhone": "7325556666"
  },
  {
-  "customerID": "14",
-  "customerName": "Mark Bono",
-  "customerAddress": "43 hello way",
-  "customerCity": "Richmond",
-  "customerState": "VA",
-  "customerPhone": "5155543206"
- },
- {
   "customerID": "15",
   "customerName": "Joe Biden",
   "customerAddress": "123 Penn Ave",
   "customerCity": "Washington",
   "customerState": "DC",
   "customerPhone": "7325556666"
- },
- {
-  "customerID": "16",
-  "customerName": "Zee Mee",
-  "customerAddress": "123 park st",
-  "customerCity": "Hightstown",
-  "customerState": "NJ",
-  "customerPhone": "1231231234"
  },
  {
   "customerID": "17",
@@ -137,7 +97,7 @@
  },
  {
   "customerID": "18",
-  "customerName": "Nosa Okundaye",
+  "customerName": "Nosa",
   "customerAddress": "99 Fun st",
   "customerCity": "San Jose",
   "customerState": "CA",
@@ -145,23 +105,15 @@
  },
  {
   "customerID": "19",
-  "customerName": "Anju Gadodia",
+  "customerName": "Anju",
   "customerAddress": "44 spring Ave",
   "customerCity": "San Francisco",
   "customerState": "CA",
   "customerPhone": "5051020304"
  },
  {
-  "customerID": "20",
-  "customerName": "Ammar Malik",
-  "customerAddress": "100 boss ave",
-  "customerCity": "Dallas",
-  "customerState": "TX",
-  "customerPhone": "5566771000"
- },
- {
   "customerID": "21",
-  "customerName": "Bakal G",
+  "customerName": "Bakal",
   "customerAddress": "21 Professor st",
   "customerCity": "Portland",
   "customerState": "OR",
@@ -169,7 +121,7 @@
  },
  {
   "customerID": "23",
-  "customerName": "Tim O.",
+  "customerName": "Tim",
   "customerAddress": "101 smarty way",
   "customerCity": "Los Angeles",
   "customerState": "CA",
@@ -177,7 +129,7 @@
  },
  {
   "customerID": "24",
-  "customerName": "Shafan Sugarman",
+  "customerName": "Shafan",
   "customerAddress": "11 genius st",
   "customerCity": "NYC",
   "customerState": "NY",
@@ -200,11 +152,19 @@
   "customerPhone": "6665557777"
  },
  {
-  "customerID": "28",
-  "customerName": "Murphy",
-  "customerAddress": "100 main st",
-  "customerCity": "Trenton",
+  "customerID": "27",
+  "customerName": "Manny",
+  "customerAddress": "10 luck st",
+  "customerCity": "Newark",
   "customerState": "NJ",
-  "customerPhone": "1112221000"
+  "customerPhone": "100020000"
+ },
+ {
+  "customerID": "28",
+  "customerName": "Geetha",
+  "customerAddress": "2 sea st,",
+  "customerCity": "Bradley",
+  "customerState": "CA",
+  "customerPhone": "321000000"
  }
 ]

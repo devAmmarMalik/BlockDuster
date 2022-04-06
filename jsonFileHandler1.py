@@ -9,37 +9,23 @@ def readJsonFile(filename) :
             return data
     except IOError:
         print("Error reading JSON file")
-
     
-def searchJsonFile(searchCust, filename) :
-    import CustomerIDX
-    recNumber = -1
-    customerID = 0
-    
-    objCustomer = CustomerIDX.Customer(filename)
-    recNumber, customerID = objCustomer.search(searchCust)
-
-    data = readJsonFile(filename)
-    return int(recNumber), data[int(recNumber)]
-    
-
-     
-
 
 
 # function to add new data record  to jason file
-def editJsonFile(editCustName, newdata, filename) :
+def editJsonFile(editCust, newdata, filename) :
     # load data from json file
     data = readJsonFile(filename)
 
     # gets the number of records
     lendata = len(data)
     
+    print(newdata)
     #parsing the records in data 
 
     for i in range(0,lendata):
         #  assigning new values to data if given for customerName, address, city, state
-        if data[i]['customerName'] == editCustName :
+        if data[i]['customerName'] == editCust :
         
             if newdata['customerAddress'] != "":
                  data[i]['customerAddress'] = newdata['customerAddress']
@@ -62,13 +48,13 @@ def editJsonFile(editCustName, newdata, filename) :
         return 1
 
     
-def addJsonFile(newdata, filename) :
+def writeJsonFile(newdata, filename) :
     # load data from json file   
     data = readJsonFile(filename)
     # assigning customer id to new customer by adding 1 to the customer id of last record
     newdata['customerID'] = str(int(data[-1]['customerID']) + 1)
 
-    #print(newdata)
+    print(newdata)
     
     # open json file in write mode         
     with open(filename, "w") as json_file:
